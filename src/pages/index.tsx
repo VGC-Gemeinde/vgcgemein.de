@@ -3,6 +3,8 @@ import { DefaultLayout } from "../layouts/default";
 import styled from "styled-components";
 import { Link } from "../components/link";
 import { Emblem } from "../branding/emblem";
+import { Seperator } from "../components/seperator";
+import { theme } from "../theme";
 
 const WelcomeSection = styled.div`
   background-color: ${({ theme }) => theme.colors.gallade};
@@ -59,6 +61,10 @@ const IndexPage: React.FC<PageProps> = () => {
           <Emblem />
         </EmblemContainer>
       </WelcomeSection>
+      <Seperator direction="FILLED_TO_UNFILLED" />
+      <div style={{ height: "400px" }} />
+      <Seperator direction="UNFILLED_TO_FILLED" />
+      <div style={{ height: "400px", background: theme.colors.gallade }} />
     </DefaultLayout>
   );
 };

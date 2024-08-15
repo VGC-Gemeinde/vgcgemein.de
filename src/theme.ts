@@ -9,6 +9,7 @@ const theme = {
   },
   colors: {
     gallade: "#1f5080",
+    background: "#ffffff",
     germany: {
       black: "#000000",
       red: "#fe0000",
