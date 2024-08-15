@@ -10,7 +10,7 @@ declare module "styled-components" {
 }
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  body, h1, p {
     margin: 0;
   }`;
 

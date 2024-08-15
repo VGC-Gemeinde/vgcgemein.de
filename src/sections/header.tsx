@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Logo } from "../branding/logo";
 import { Navigation } from "./navigation";
 import { Link } from "../components/link";
+import { Icon } from "../branding/icon";
 
 const Container = styled.header`
   display: flex;
@@ -11,7 +11,7 @@ const Container = styled.header`
 const Content = styled.div`
   display: flex;
   flex-direction: row;
-  padding: ${({ theme }) => theme.spacing.containerMargin};
+  padding: ${({ theme }) => theme.spacing.containerPadding.small};
   justify-content: space-between;
 `;
 
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
     <Container>
       <Content>
         <Link to="/">
-          <Logo />
+          <Icon />
         </Link>
         <Navigation />
       </Content>
