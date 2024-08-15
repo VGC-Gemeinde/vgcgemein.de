@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Logo } from "../branding/logo";
 import { Navigation } from "./navigation";
+import { Link } from "../components/link";
 
 const Container = styled.header`
   display: flex;
@@ -28,7 +29,9 @@ const Header: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <Navigation />
       </Content>
       <FlagBorder />

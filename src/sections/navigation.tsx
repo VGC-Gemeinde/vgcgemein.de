@@ -1,12 +1,13 @@
-import { Link } from "gatsby";
+import { Link } from "../components/link";
 import styled, { useTheme } from "styled-components";
 import { FaYoutube, FaTwitch, FaXTwitter, FaDiscord } from "react-icons/fa6";
 import { IconType } from "react-icons";
 
 type NavItems = {
   label: string;
-  Icon?: IconType;
   link: string;
+  Icon?: IconType;
+  newTab?: boolean;
 };
 
 const navigationItems: NavItems[] = [
@@ -36,23 +37,27 @@ const navigationItems: NavItems[] = [
   },
   {
     label: "Discord",
-    Icon: FaDiscord,
     link: "https://discord.gg/An7DjBxWkh",
+    Icon: FaDiscord,
+    newTab: true,
   },
   {
     label: "Youtube",
-    Icon: FaYoutube,
     link: "https://www.youtube.com/@VGC_Gemeinde",
+    Icon: FaYoutube,
+    newTab: true,
   },
   {
     label: "X",
-    Icon: FaXTwitter,
     link: "https://x.com/vgc_gemeinde",
+    Icon: FaXTwitter,
+    newTab: true,
   },
   {
     label: "Twitch",
-    Icon: FaTwitch,
     link: "https://www.twitch.tv/vgc_gemeinde",
+    Icon: FaTwitch,
+    newTab: true,
   },
 ];
 
@@ -63,21 +68,10 @@ const Container = styled.nav`
 `;
 
 const NavigationLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.gallade};
   margin-right: ${({ theme }) => theme.spacing.horizontalBuffer};
   font-size: ${({ theme }) => theme.fontSizes.large};
   display: flex;
   align-items: center;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:focus {
-    outline-width: ${({ theme }) => theme.accessibility.focussed.outlineWidth};
-    outline-color: ${({ theme }) => theme.colors.gallade};
-  }
 `;
 
 const Navigation: React.FC = () => {
@@ -85,13 +79,17 @@ const Navigation: React.FC = () => {
 
   return (
     <Container>
-      {navigationItems.map(({ label, link, Icon }) => {
+      {navigationItems.map(({ label, link, Icon, newTab }) => {
         const renderedLabel = Icon ? (
           <Icon color={theme.colors.gallade} title={label} aria-label={label} />
         ) : (
           label
         );
-        return <NavigationLink to={link}>{renderedLabel}</NavigationLink>;
+        return (
+          <NavigationLink to={link} target={newTab ? "_blank" : undefined}>
+            {renderedLabel}
+          </NavigationLink>
+        );
       })}
     </Container>
   );
