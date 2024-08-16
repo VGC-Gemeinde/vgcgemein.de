@@ -42,6 +42,9 @@ const theme = {
       outlineWidth: "1px",
     },
   },
+  breakpoints: {
+    small: 1300,
+  },
 };
 
 export { theme };

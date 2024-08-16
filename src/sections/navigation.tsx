@@ -1,7 +1,16 @@
 import { Link } from "../components/link";
 import styled, { useTheme } from "styled-components";
-import { FaYoutube, FaTwitch, FaXTwitter, FaDiscord } from "react-icons/fa6";
+import {
+  FaYoutube,
+  FaTwitch,
+  FaXTwitter,
+  FaDiscord,
+  FaBars,
+  FaX,
+} from "react-icons/fa6";
 import { IconType } from "react-icons";
+import { useBreakPoints } from "../hooks/useBreakpoints";
+import { useState } from "react";
 
 type NavigationItem = {
   label: string;
@@ -10,7 +19,7 @@ type NavigationItem = {
   newTab?: boolean;
 };
 
-const navigationItems: NavigationItem[] = [
+const links: NavigationItem[] = [
   {
     label: "News",
     link: "/news",
@@ -35,6 +44,9 @@ const navigationItems: NavigationItem[] = [
     label: "Shop",
     link: "/shop",
   },
+];
+
+const socials: NavigationItem[] = [
   {
     label: "Discord",
     link: "https://discord.gg/An7DjBxWkh",
@@ -61,6 +73,8 @@ const navigationItems: NavigationItem[] = [
   },
 ];
 
+const navigationItems: NavigationItem[] = [...links, ...socials];
+
 const Container = styled.nav`
   display: flex;
   flex-direction: row;
@@ -74,8 +88,113 @@ const NavigationLink = styled(Link)`
   align-items: center;
 `;
 
+const MobileNavigationLinkContainer = styled.div`
+  padding: ${({ theme }) => theme.spacing.containerPadding.small};
+  width: 100%;
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  justify-content: center;
+`;
+
+const MobileNavigationLink = styled(Link)`
+  font-size: ${({ theme }) => theme.fontSizes.gigantic};
+  display: flex;
+  align-items: center;
+  padding-left: ${({ theme }) => theme.spacing.horizontalBuffer.small};
+  padding-right: ${({ theme }) => theme.spacing.horizontalBuffer.small};
+`;
+
+const MobileNavigationPopover = styled.div`
+  position: absolute;
+  top: 89px;
+  left: 0px;
+  height: calc(100% - 89px);
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  opacity: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Navigation: React.FC = () => {
   const theme = useTheme();
+  const { isSmall } = useBreakPoints();
+
+  const [isNavigationOpen, setIsNavigationOpen] = useState(false);
+
+  if (isSmall) {
+    return (
+      <Container>
+        {isNavigationOpen ? (
+          <FaX
+            size={50}
+            title="Navigation schließen"
+            aria-label="Navigation schließen"
+            color={theme.colors.gallade}
+            onClick={() => setIsNavigationOpen(false)}
+          />
+        ) : (
+          <FaBars
+            size={50}
+            title="Navigation öffnen"
+            aria-label="Navigation öffnen"
+            color={theme.colors.gallade}
+            onClick={() => setIsNavigationOpen(true)}
+          />
+        )}
+        {isNavigationOpen && (
+          <MobileNavigationPopover>
+            {links.map(({ label, link, Icon, newTab }) => {
+              const renderedLabel = Icon ? (
+                <Icon
+                  color={theme.colors.gallade}
+                  title={label}
+                  aria-label={label}
+                />
+              ) : (
+                label
+              );
+              return (
+                <MobileNavigationLinkContainer>
+                  <MobileNavigationLink
+                    to={link}
+                    target={newTab ? "_blank" : undefined}
+                  >
+                    {renderedLabel}
+                  </MobileNavigationLink>
+                </MobileNavigationLinkContainer>
+              );
+            })}
+            <MobileNavigationLinkContainer>
+              {socials.map(({ label, link, Icon, newTab }) => {
+                const renderedLabel = Icon ? (
+                  <Icon
+                    color={theme.colors.gallade}
+                    title={label}
+                    aria-label={label}
+                  />
+                ) : (
+                  label
+                );
+                return (
+                  <MobileNavigationLink
+                    to={link}
+                    target={newTab ? "_blank" : undefined}
+                  >
+                    {renderedLabel}
+                  </MobileNavigationLink>
+                );
+              })}
+            </MobileNavigationLinkContainer>
+          </MobileNavigationPopover>
+        )}
+      </Container>
+    );
+  }
 
   return (
     <Container>
