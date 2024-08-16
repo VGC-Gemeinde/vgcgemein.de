@@ -3,14 +3,14 @@ import styled, { useTheme } from "styled-components";
 import { FaYoutube, FaTwitch, FaXTwitter, FaDiscord } from "react-icons/fa6";
 import { IconType } from "react-icons";
 
-type NavItems = {
+type NavigationItem = {
   label: string;
   link: string;
   Icon?: IconType;
   newTab?: boolean;
 };
 
-const navigationItems: NavItems[] = [
+const navigationItems: NavigationItem[] = [
   {
     label: "News",
     link: "/news",

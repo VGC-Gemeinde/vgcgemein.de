@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Navigation } from "./navigation";
 import { Link } from "../components/link";
-import { Icon } from "../branding/icon";
+import { CommunityIcon } from "../branding/communityIcon";
 
 const Container = styled.header`
   display: flex;
@@ -23,6 +23,10 @@ const FlagBorder = styled.div`
     ${({ theme }) => theme.colors.germany.red} 40%,
     ${({ theme }) => theme.colors.germany.gold} 75%
   );
+`;
+
+const Icon = styled(CommunityIcon)`
+  height: 50px;
 `;
 
 const Header: React.FC = () => {

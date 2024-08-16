@@ -1,11 +1,11 @@
 const theme = {
   spacing: {
     containerPadding: {
-      small: "8px",
-      large: "40px",
+      small: "16px",
+      gigantic: "80px",
     },
     horizontalBuffer: "12px",
-    verticalBuffer: "20px",
+    verticalBuffer: "12px",
   },
   colors: {
     gallade: "#1f5080",
@@ -21,6 +21,7 @@ const theme = {
     },
   },
   fontSizes: {
+    small: "10px",
     normal: "16px",
     large: "20px",
     gigantic: "50px",
