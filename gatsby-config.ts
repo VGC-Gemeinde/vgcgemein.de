@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `VGC Gemeinde`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://vgcgemein.de`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -19,7 +19,6 @@ const config: GatsbyConfig = {
     },
   ],
   jsxRuntime: "automatic",
-  pathPrefix: "/vgcgemein.de",
 };
 
 export default config;
