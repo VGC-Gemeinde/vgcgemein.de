@@ -19,6 +19,7 @@ const config: GatsbyConfig = {
     },
   ],
   jsxRuntime: "automatic",
+  pathPrefix: "/vgcgemein.de",
 };
 
 export default config;
