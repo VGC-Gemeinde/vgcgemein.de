@@ -122,11 +122,11 @@ const MobileNavigationPopover = styled.div`
 
 const Navigation: React.FC = () => {
   const theme = useTheme();
-  const { isSmall } = useBreakPoints();
+  const { isLarge } = useBreakPoints();
 
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 
-  if (isSmall) {
+  if (!isLarge) {
     return (
       <Container>
         {isNavigationOpen ? (

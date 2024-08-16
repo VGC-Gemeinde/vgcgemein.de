@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "../components/link";
 import { CommunityIcon } from "../branding/communityIcon";
 import { useEffect, useState } from "react";
+import { useBreakPoints } from "../hooks/useBreakpoints";
 
 const Container = styled.footer`
   display: flex;
@@ -60,6 +61,8 @@ const Footer: React.FC = () => {
     number | "loading"
   >("loading");
 
+  const { isTiny, isLarge } = useBreakPoints();
+
   useEffect(() => {
     void (async () => {
       let response = await fetch(
@@ -89,15 +92,21 @@ const Footer: React.FC = () => {
           Spenden
         </FooterLink>
       </LeftSide>
-      <RightSide>
-        {[
-          "Größte deutschsprachige VGC Community",
-          "Heimat der VGC Bundesliga",
-          `Aktuelle Mitglieder: ${currentMemberCount}`,
-        ].map((text) => (
-          <FooterText>{text}</FooterText>
-        ))}
-      </RightSide>
+      {!isTiny && (
+        <RightSide>
+          {[
+            ...(isLarge
+              ? [
+                  "Größte deutschsprachige VGC Community",
+                  "Heimat der VGC Bundesliga",
+                ]
+              : []),
+            `Aktuelle Mitglieder: ${currentMemberCount}`,
+          ].map((text) => (
+            <FooterText>{text}</FooterText>
+          ))}
+        </RightSide>
+      )}
     </Container>
   );
 };

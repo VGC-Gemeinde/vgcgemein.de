@@ -3,6 +3,7 @@ const theme = {
     containerPadding: {
       small: "16px",
       normal: "32px",
+      large: "48px",
       gigantic: "64px",
     },
     horizontalBuffer: {
@@ -43,6 +44,7 @@ const theme = {
     },
   },
   breakpoints: {
+    tiny: 700,
     small: 1300,
   },
 };

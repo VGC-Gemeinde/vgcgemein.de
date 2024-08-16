@@ -7,13 +7,15 @@ const useBreakPoints = () => {
 
   if (width === null) {
     return {
+      isTiny: false,
       isSmall: false,
       isLarge: true,
     };
   }
 
   return {
-    isSmall: width <= theme.breakpoints.small,
+    isTiny: width <= theme.breakpoints.tiny,
+    isSmall: width > theme.breakpoints.tiny && width <= theme.breakpoints.small,
     isLarge: width > theme.breakpoints.small,
   };
 };

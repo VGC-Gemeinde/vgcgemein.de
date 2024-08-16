@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { useBreakPoints } from "../hooks/useBreakpoints";
 
-const Container = styled.div`
+const Container = styled.div<{ $width: string }>`
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: ${({ $width }) => $width};
   min-height: 575px;
   max-height: 575px;
 `;
@@ -70,8 +71,10 @@ const NewsCard: React.FC<NewsCardProps> = ({
   date,
   description,
 }) => {
+  const { isLarge } = useBreakPoints();
+
   return (
-    <Container>
+    <Container $width={!isLarge ? "100%" : "350px"}>
       <ImageContainer $backgroundImage={imageSrc} />
       <Seperator $color={seperatorColor} />
       <InformationSection>

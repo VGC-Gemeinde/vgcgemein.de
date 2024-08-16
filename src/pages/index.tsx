@@ -9,10 +9,17 @@ import { NewsCard } from "../branding/newsCard";
 import regH from "../images/reg-h.jpeg";
 import epTeiler from "../images/ep-teiler.jpeg";
 import worlds from "../images/worlds.jpeg";
+import { useBreakPoints } from "../hooks/useBreakpoints";
 
-const WelcomeSection = styled.div`
+type VarialbeLayout = {
+  $padding?: string;
+  $direction?: "row" | "column";
+};
+
+const WelcomeSection = styled.div<VarialbeLayout>`
   background-color: ${({ theme }) => theme.colors.gallade};
-  padding: ${({ theme }) => theme.spacing.containerPadding.gigantic};
+  padding: ${({ theme, $padding }) =>
+    $padding ?? theme.spacing.containerPadding.gigantic};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +27,8 @@ const WelcomeSection = styled.div`
 
 const InnerWelcomeSection = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1400px;
   width: 100%;
 `;
@@ -28,7 +36,8 @@ const InnerWelcomeSection = styled.div`
 const TeaserText = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
+  max-width: 580px;
+
   color: ${({ theme }) => theme.colors.text.bright};
   & > * {
     padding-top: ${({ theme }) => theme.spacing.verticalBuffer.normal};
@@ -48,7 +57,6 @@ const TeaserCallToAction = styled(Link)`
 `;
 
 const EmblemContainer = styled.div`
-  flex: 1 1 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,8 +66,9 @@ const Emblem = styled(CommunityEmblem)`
   height: 250px;
 `;
 
-const NewsSection = styled.div`
-  padding: ${({ theme }) => theme.spacing.containerPadding.gigantic};
+const NewsSection = styled.div<VarialbeLayout>`
+  padding: ${({ theme, $padding }) =>
+    $padding ?? theme.spacing.containerPadding.gigantic};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,13 +90,17 @@ const NewsSectionHeading = styled.div`
   width: 100%;
 `;
 
-const NewsCards = styled.div`
+const NewsCards = styled.div<VarialbeLayout>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ $direction }) => $direction ?? "row"};
   justify-content: space-between;
   max-width: 1400px;
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer.large};
+  & > * {
+    padding-top: ${({ theme }) => theme.spacing.verticalBuffer.normal};
+    padding-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
+  }
 `;
 
 type NewsItem = {
@@ -127,9 +140,17 @@ const ToAllNews = styled.div`
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
+  const { isTiny, isLarge } = useBreakPoints();
+
   return (
     <DefaultLayout>
-      <WelcomeSection>
+      <WelcomeSection
+        $padding={
+          isTiny
+            ? theme.spacing.containerPadding.large
+            : theme.spacing.containerPadding.gigantic
+        }
+      >
         <InnerWelcomeSection>
           <TeaserText>
             <TeaserTextHeading>VGC Gemeinde</TeaserTextHeading>
@@ -142,17 +163,23 @@ const IndexPage: React.FC<PageProps> = () => {
               Trete dem Discord bei!
             </TeaserCallToAction>
           </TeaserText>
-          <EmblemContainer>
-            <Emblem />
-          </EmblemContainer>
+          {!isTiny && (
+            <EmblemContainer>
+              <Emblem />
+            </EmblemContainer>
+          )}
         </InnerWelcomeSection>
       </WelcomeSection>
       <Seperator direction="FILLED_TO_UNFILLED" />
-      <NewsSection>
-        <NewsSectionHeading>
-          <div>News</div>
-        </NewsSectionHeading>
-        <NewsCards>
+      <NewsSection
+        $padding={
+          isTiny
+            ? theme.spacing.containerPadding.large
+            : theme.spacing.containerPadding.gigantic
+        }
+      >
+        <NewsSectionHeading>News</NewsSectionHeading>
+        <NewsCards $direction={!isLarge ? "column" : "row"}>
           {newsItems
             .slice(0, 3)
             .map(({ headLine, date, description, imageSrc }, index) => (
