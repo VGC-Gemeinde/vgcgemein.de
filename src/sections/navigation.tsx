@@ -68,7 +68,7 @@ const Container = styled.nav`
 `;
 
 const NavigationLink = styled(Link)`
-  margin-right: ${({ theme }) => theme.spacing.horizontalBuffer};
+  margin-right: ${({ theme }) => theme.spacing.horizontalBuffer.normal};
   font-size: ${({ theme }) => theme.fontSizes.large};
   display: flex;
   align-items: center;

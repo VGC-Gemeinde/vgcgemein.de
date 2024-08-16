@@ -44,13 +44,13 @@ const InformationSection = styled.div`
 const HeadLine = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.large};
   font-weight: bold;
-  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer};
+  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
 `;
 
 const Date = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: lighter;
-  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer};
+  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
 `;
 
 const Description = styled.div``;

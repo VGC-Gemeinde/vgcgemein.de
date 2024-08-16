@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Header } from "../sections/header";
 import styled from "styled-components";
+import { Footer } from "../sections/footer";
 
 const Container = styled.div`
   font-family: Roboto;
@@ -13,6 +14,7 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
     <Container>
       <Header />
       <main>{children}</main>
+      <Footer />
     </Container>
   );
 };

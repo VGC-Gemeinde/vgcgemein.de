@@ -31,8 +31,8 @@ const TeaserText = styled.div`
   flex: 1 1 0;
   color: ${({ theme }) => theme.colors.text.bright};
   & > * {
-    padding-top: ${({ theme }) => theme.spacing.verticalBuffer};
-    padding-bottom: ${({ theme }) => theme.spacing.verticalBuffer};
+    padding-top: ${({ theme }) => theme.spacing.verticalBuffer.normal};
+    padding-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
   }
 `;
 
@@ -71,7 +71,7 @@ const NewsCards = styled.div`
   justify-content: space-between;
   max-width: 1400px;
   width: 100%;
-  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer};
+  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
 `;
 
 type NewsItem = {
