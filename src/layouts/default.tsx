@@ -7,13 +7,23 @@ const Container = styled.div`
   font-family: Roboto;
   font-size: ${({ theme }) => theme.fontSizes.normal};
   color: ${({ theme }) => theme.colors.text.dark};
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Main = styled.main`
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <Container>
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </Container>
   );

@@ -63,6 +63,7 @@ const NewsSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 `;
 
 const NewsCards = styled.div`
