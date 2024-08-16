@@ -38,6 +38,7 @@ const TeaserText = styled.div`
 
 const TeaserTextHeading = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.gigantic};
+  font-weight: bold;
 `;
 
 const TeaserCallToAction = styled(Link)`
@@ -61,9 +62,23 @@ const NewsSection = styled.div`
   padding: ${({ theme }) => theme.spacing.containerPadding.gigantic};
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   flex-grow: 1;
+  & > * {
+    padding-top: ${({ theme }) => theme.spacing.verticalBuffer.normal};
+    padding-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
+  }
+`;
+
+const NewsSectionHeading = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.gigantic};
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.gallade};
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 1400px;
+  width: 100%;
 `;
 
 const NewsCards = styled.div`
@@ -72,7 +87,7 @@ const NewsCards = styled.div`
   justify-content: space-between;
   max-width: 1400px;
   width: 100%;
-  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer.normal};
+  margin-bottom: ${({ theme }) => theme.spacing.verticalBuffer.large};
 `;
 
 type NewsItem = {
@@ -134,6 +149,9 @@ const IndexPage: React.FC<PageProps> = () => {
       </WelcomeSection>
       <Seperator direction="FILLED_TO_UNFILLED" />
       <NewsSection>
+        <NewsSectionHeading>
+          <div>News</div>
+        </NewsSectionHeading>
         <NewsCards>
           {newsItems
             .slice(0, 3)

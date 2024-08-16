@@ -5,8 +5,18 @@ const theme = {
       normal: "32px",
       gigantic: "64px",
     },
-    horizontalBuffer: { normal: "12px", large: "24px", gigantic: "36px" },
-    verticalBuffer: { small: "6px", normal: "12px" },
+    horizontalBuffer: {
+      small: "6px",
+      normal: "12px",
+      large: "24px",
+      gigantic: "36px",
+    },
+    verticalBuffer: {
+      small: "6px",
+      normal: "12px",
+      large: "24px",
+      gigantic: "36px",
+    },
   },
   colors: {
     gallade: "#1f5080",
