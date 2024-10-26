@@ -5,7 +5,7 @@ import { Footer } from "../sections/footer";
 
 const Container = styled.div`
   font-family: Roboto;
-  font-size: ${({ theme }) => theme.fontSizes.normal};
+  font-size: ${({ theme }) => theme.sizes.font.normal};
   color: ${({ theme }) => theme.colors.text.dark};
   min-height: 100vh;
   display: flex;
@@ -14,8 +14,6 @@ const Container = styled.div`
 `;
 
 const Main = styled.main`
-  flex-grow: 1;
-
   display: flex;
   flex-direction: column;
 `;

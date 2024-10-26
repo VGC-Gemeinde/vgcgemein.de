@@ -1,5 +1,4 @@
 import styled, { useTheme } from "styled-components";
-import { useBreakPoints } from "../hooks/useBreakpoints";
 
 type StyledSeperatorProps = {
   $startColor: string;
@@ -24,7 +23,6 @@ type SeperatorProps = {
 
 const Seperator: React.FC<SeperatorProps> = ({ direction }) => {
   const theme = useTheme();
-  const { isTiny } = useBreakPoints();
 
   const startColor =
     direction === "FILLED_TO_UNFILLED"
@@ -39,7 +37,7 @@ const Seperator: React.FC<SeperatorProps> = ({ direction }) => {
     <StyledSeperator
       $startColor={startColor}
       $endColor={endColor}
-      $height={isTiny ? "50px" : "80px"}
+      $height={"80px"}
     />
   );
 };

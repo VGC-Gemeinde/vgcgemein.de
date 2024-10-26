@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import { Link } from "../components/link";
-import { CommunityIcon } from "../branding/communityIcon";
+import { VgcGemeindeIcon } from "../vgcGemeinde/branding/icon";
 import { useEffect, useState } from "react";
-import { useBreakPoints } from "../hooks/useBreakpoints";
 
 const Container = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing.containerPadding.normal};
+  padding: ${({ theme }) => theme.spacing.padding.normal};
   background-color: ${({ theme }) => theme.colors.gallade};
   color: ${({ theme }) => theme.colors.text.bright};
 `;
@@ -28,11 +27,11 @@ const RightSide = styled.div`
 
 const FooterLink = styled(Link)`
   color: ${({ theme }) => theme.colors.text.bright};
-  margin-right: ${({ theme }) => theme.spacing.horizontalBuffer.normal};
+  margin-right: ${({ theme }) => theme.spacing.buffer.normal};
 `;
 
 const FooterText = styled.div`
-  margin-right: ${({ theme }) => theme.spacing.horizontalBuffer.normal};
+  margin-right: ${({ theme }) => theme.spacing.buffer.normal};
 `;
 
 type FooterLink = {
@@ -51,17 +50,15 @@ const legalRequirements: FooterLink[] = [
   },
 ];
 
-const Icon = styled(CommunityIcon)`
+const Icon = styled(VgcGemeindeIcon)`
   height: 50px;
-  margin-right: ${({ theme }) => theme.spacing.horizontalBuffer.gigantic};
+  margin-right: ${({ theme }) => theme.spacing.buffer.gigantic};
 `;
 
 const Footer: React.FC = () => {
   const [currentMemberCount, setCurrentMemberCount] = useState<
     number | "loading"
   >("loading");
-
-  const { isTiny, isLarge } = useBreakPoints();
 
   useEffect(() => {
     void (async () => {
@@ -92,21 +89,15 @@ const Footer: React.FC = () => {
           Spenden
         </FooterLink>
       </LeftSide>
-      {!isTiny && (
-        <RightSide>
-          {[
-            ...(isLarge
-              ? [
-                  "Größte deutschsprachige VGC Community",
-                  "Heimat der VGC Bundesliga",
-                ]
-              : []),
-            `Aktuelle Mitglieder: ${currentMemberCount}`,
-          ].map((text) => (
-            <FooterText>{text}</FooterText>
-          ))}
-        </RightSide>
-      )}
+      <RightSide>
+        {[
+          "Größte deutschsprachige VGC Community",
+          "Heimat der VGC Bundesliga",
+          `Aktuelle Mitglieder: ${currentMemberCount}`,
+        ].map((text) => (
+          <FooterText>{text}</FooterText>
+        ))}
+      </RightSide>
     </Container>
   );
 };

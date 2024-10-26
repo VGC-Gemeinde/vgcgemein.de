@@ -1,38 +1,43 @@
 import styled from "styled-components";
 import { Navigation } from "./navigation";
 import { Link } from "../components/link";
-import { CommunityIcon } from "../branding/communityIcon";
+import { VgcGemeindeIcon } from "../vgcGemeinde/branding/icon";
+import { useScreenSize } from "../hooks/useScreenSize";
+import { theme } from "../theme";
 
 const Container = styled.header`
   display: flex;
   flex-direction: column;
 `;
 
-const Content = styled.div`
+const Content = styled.div<{ $padding: string }>`
   display: flex;
   flex-direction: row;
-  padding: ${({ theme }) => theme.spacing.containerPadding.small};
+  padding: ${({ $padding }) => $padding};
   justify-content: space-between;
 `;
 
 const FlagBorder = styled.div`
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    ${({ theme }) => theme.colors.germany.black} 0%,
-    ${({ theme }) => theme.colors.germany.red} 40%,
-    ${({ theme }) => theme.colors.germany.gold} 75%
-  );
+  height: 4px;
+  background: ${({ theme }) => theme.colors.germany.gradiant(theme)};
 `;
 
-const Icon = styled(CommunityIcon)`
-  height: 50px;
+const Icon = styled(VgcGemeindeIcon)`
+  height: ${({ theme }) => theme.sizes.header.icons}px;
 `;
 
 const Header: React.FC = () => {
+  const { upTo } = useScreenSize();
+
   return (
-    <Container>
-      <Content>
+    <Container id="header">
+      <Content
+        $padding={
+          upTo("small")
+            ? theme.spacing.padding.small
+            : theme.spacing.padding.normal
+        }
+      >
         <Link to="/">
           <Icon />
         </Link>

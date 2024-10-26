@@ -1,18 +1,14 @@
+import { DefaultTheme } from "styled-components";
+
 const theme = {
   spacing: {
-    containerPadding: {
-      small: "16px",
-      normal: "32px",
-      large: "48px",
+    padding: {
+      small: "8px",
+      normal: "16px",
+      large: "32px",
       gigantic: "64px",
     },
-    horizontalBuffer: {
-      small: "6px",
-      normal: "12px",
-      large: "24px",
-      gigantic: "36px",
-    },
-    verticalBuffer: {
+    buffer: {
       small: "6px",
       normal: "12px",
       large: "24px",
@@ -21,31 +17,40 @@ const theme = {
   },
   colors: {
     gallade: "#1f5080",
+    epTeiler: "#ffd744",
     background: "#ffffff",
     germany: {
       black: "#000000",
       red: "#fe0000",
       gold: "#faaf3a",
+      gradiant: (theme: DefaultTheme): string => `linear-gradient(90deg, ${theme.colors.germany.black} 0%, ${theme.colors.germany.red} 40%, ${theme.colors.germany.gold} 75%)`
     },
     text: {
       dark: "#000000",
       bright: "#ffffff",
     },
   },
-  fontSizes: {
-    small: "10px",
-    normal: "16px",
-    large: "20px",
-    gigantic: "50px",
+  sizes: {
+    font: {
+      small: "12px",
+      normal: "16px",
+      large: "24px",
+      gigantic: "48px",
+    },
+    header: {
+      icons: 64,
+      menu: 48,
+    },
+    maxContentWidth: "1500px"
+  },
+  breakpoints: {
+    tiny: 700,
+    small: 1300,
   },
   accessibility: {
     focussed: {
       outlineWidth: "1px",
     },
-  },
-  breakpoints: {
-    tiny: 700,
-    small: 1300,
   },
 };
 
