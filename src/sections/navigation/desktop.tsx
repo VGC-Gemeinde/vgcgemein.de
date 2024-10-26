@@ -11,7 +11,7 @@ const Navigation = styled.nav`
 const NavigationLink = styled(Link)`
   display: flex;
   align-items: center;
-  font-size: ${({ theme }) => theme.sizes.font.large};
+  font-size: ${({ theme }) => theme.sizes.font.normal};
   font-weight: bold;
 `;
 

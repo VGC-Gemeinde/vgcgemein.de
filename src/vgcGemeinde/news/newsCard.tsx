@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import { Image } from "../../components/image";
-import { addOpacity } from "../../utils";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: ${40 * 16}px;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+  border: 1px solid black;
 `;
 
 const TeaserContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => addOpacity("0.6", theme.colors.germany.black)};
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 const Teaser = styled(Image)`

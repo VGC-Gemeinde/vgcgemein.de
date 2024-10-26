@@ -21,7 +21,7 @@ const NewsSectionHeading = styled.div`
   color: ${({ theme }) => theme.colors.gallade};
 `;
 
-const ToAllNews = styled.div`
+const ToAllNews = styled(Link)`
   font-size: ${({ theme }) => theme.sizes.font.large};
   text-decoration: underline;
 `;
@@ -34,8 +34,8 @@ const NewsCards = styled.div`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
   & > * {
-    margin-top: ${({ theme }) => theme.spacing.buffer.normal};
-    margin-bottom: ${({ theme }) => theme.spacing.buffer.normal};
+    margin-top: ${({ theme }) => theme.spacing.buffer.large};
+    margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
   }
 `;
 
@@ -67,9 +67,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ news }) => {
                 ))
             }
             </NewsCards>
-            <ToAllNews>
-              <Link to="/news">Alle News anschauen</Link>
-            </ToAllNews>
+            <ToAllNews to="/news">Alle News anschauen</ToAllNews>
         </Content>
     </Container>
 

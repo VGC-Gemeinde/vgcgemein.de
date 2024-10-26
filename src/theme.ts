@@ -32,16 +32,16 @@ const theme = {
   },
   sizes: {
     font: {
-      small: "12px",
-      normal: "16px",
-      large: "24px",
+      small: "16px",
+      normal: "24px",
+      large: "32px",
       gigantic: "48px",
     },
     header: {
       icons: 64,
       menu: 48,
     },
-    maxContentWidth: "1500px"
+    maxContentWidth: "1400px"
   },
   breakpoints: {
     tiny: 700,
