@@ -31,8 +31,6 @@ const guides: Guide[] = [
 
 
 const IndexPage: React.FC<PageProps<{ allContentfulNews: { nodes: ApiNews[] } }>> = ({ data }) => {
-  console.log({ data })
-
   return (
     <DefaultLayout>
       <WelcomeSection />

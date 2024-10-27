@@ -1,4 +1,4 @@
-import { useWindowSize } from "@uidotdev/usehooks";
+import { useWindowWidth } from "@react-hook/window-size";
 import { useMemo } from "react";
 import { useTheme } from "styled-components";
 
@@ -22,8 +22,9 @@ let downTo = (currentSize: ScreenSize) => (compareSize: ScreenSize) =>
   ordering[currentSize] >= ordering[compareSize];
 
 const useScreenSize = (): UseScreenSize => {
-  const { width } = useWindowSize();
+  const width = useWindowWidth();
   const theme = useTheme();
+  console.log({ width });
 
   let screenSize: ScreenSize = "large";
 

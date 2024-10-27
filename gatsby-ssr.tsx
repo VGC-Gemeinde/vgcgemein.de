@@ -10,12 +10,6 @@ declare module "styled-components" {
 }
 
 const GlobalStyle = createGlobalStyle`
-  html {
-    overflow: hidden;
-  }
-  body {
-    height: 100vh;
-  }
   body, h1, p {
     margin: 0;
   }`;
