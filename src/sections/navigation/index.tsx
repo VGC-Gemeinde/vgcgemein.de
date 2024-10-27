@@ -7,7 +7,7 @@ const MobileNavigation = lazy(() => import("./mobile"));
 const Navigation: React.FC = () => {
   const { upTo } = useScreenSize();
 
-  if (upTo("small")) {
+  if (upTo("small") && typeof window !== "undefined") {
     return <MobileNavigation />;
   }
 

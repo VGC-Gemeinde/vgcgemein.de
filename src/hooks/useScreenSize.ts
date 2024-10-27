@@ -24,7 +24,6 @@ let downTo = (currentSize: ScreenSize) => (compareSize: ScreenSize) =>
 const useScreenSize = (): UseScreenSize => {
   const width = useWindowWidth();
   const theme = useTheme();
-  console.log({ width });
 
   let screenSize: ScreenSize = "large";
 
