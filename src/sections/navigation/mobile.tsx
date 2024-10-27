@@ -1,9 +1,8 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FaBars, FaX } from "react-icons/fa6";
 import styled, { useTheme } from "styled-components";
 import { navigationItemToLink, pages, socials } from "../../vgcGemeinde/links";
 import { useHeaderSize } from "../../hooks/useHeaderSize";
-import { theme } from "../../theme";
 
 const Navigation = styled.nav`
   display: flex;
@@ -22,10 +21,13 @@ const Popover = styled.div<{ $headerSize: number }>`
 
   display: flex;
   flex-direction: column;
+
+  body {
+    overflow: hidden;
+  }
 `;
 
 const NavigationItem = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,6 +35,7 @@ const NavigationItem = styled.div`
   font-weight: bold;
   padding: ${({ theme }) => theme.spacing.padding.normal};
   gap: ${({ theme }) => theme.spacing.buffer.normal};
+  box-sizing: border-box;
 `;
 
 const NavigationItemPage = styled(NavigationItem)`
@@ -47,6 +50,14 @@ const MobileNavigation: React.FC = () => {
 
   const closeNavigation = useCallback(() => setIsOpen(false), []);
   const openNavigation = useCallback(() => setIsOpen(true), []);
+
+  useEffect((): void => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [ isOpen ]);
 
   return (
     <Navigation>

@@ -6,10 +6,20 @@ import { useScreenSize } from "../../hooks/useScreenSize";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.gallade};
-  padding: ${({ theme }) => theme.spacing.padding.gigantic};
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const ContainerLarge = styled(Container)`
+  padding: ${({ theme }) => theme.spacing.padding.gigantic};
+`;
+
+const ContainerTiny = styled(Container)`
+  padding-top: ${({ theme }) => theme.spacing.padding.large};
+  padding-bottom: ${({ theme }) => theme.spacing.padding.large};
+  padding-left: ${({ theme }) => theme.spacing.padding.small};
+  padding-right: ${({ theme }) => theme.spacing.padding.small};
 `;
 
 const Content = styled.div`
@@ -34,7 +44,8 @@ const GuideCards = styled.div`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
   & > * {
-    margin: ${({ theme }) => theme.spacing.buffer.large};
+    margin-top: ${({ theme }) => theme.spacing.buffer.large};
+    margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
   }
 `;
 
@@ -69,29 +80,30 @@ export type GuidesSectionProps = {
 export const GuidesSection: React.FC<GuidesSectionProps> = ({ guides }) => {
     const { upTo } = useScreenSize();
 
+    const ContainerC = upTo("tiny") ? ContainerTiny : ContainerLarge;
     const ContentC = upTo("small") ? ContentSmall : Content;
     const GuideCardsC = upTo("small") ? GuideCardsSmall : GuideCardsLarge;
 
     return (
-        <Container>
-            <ContentC>
-                <GuidesSectionHeading>
-                    Guides
-                </GuidesSectionHeading>
-                <GuideCardsC>
-                    { guides
-                        .map(({ headLine, description, timeToRead }, index) => (
-                            <GuideCard
-                              key={headLine}
-                              headLine={headLine}
-                              description={description}
-                              timeToRead={timeToRead}
-                            />
-                        ))
-                    }
-                </GuideCardsC>
-                <ToAllGuides to="/guides">Alle Guides anschauen</ToAllGuides>
-            </ContentC>
-        </Container>
+      <ContainerC>
+        <ContentC>
+          <GuidesSectionHeading>
+            Guides
+          </GuidesSectionHeading>
+          <GuideCardsC>
+            { guides
+                .map(({ headLine, description, timeToRead }, index) => (
+                  <GuideCard
+                    key={headLine}
+                    headLine={headLine}
+                    description={description}
+                    timeToRead={timeToRead}
+                  />
+                ))
+            }
+          </GuideCardsC>
+          <ToAllGuides to="/guides">Alle Guides anschauen</ToAllGuides>
+        </ContentC>
+      </ContainerC>
     );
 }

@@ -2,13 +2,21 @@ import styled from "styled-components";
 import { Image } from "../../components/image";
 import { PropsWithChildren, useEffect, useRef } from "react";
 import Dotdotdot from "dotdotdot-js";
+import { useScreenSize } from "../../hooks/useScreenSize";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${40 * 16}px;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
   border: 1px solid black;
+`;
+
+const ContainerLarge = styled(Container)`
+  width: ${40 * 16}px;
+`;
+
+const ContainerTiny = styled(Container)`
+  width: ${20 * 16}px;
 `;
 
 const TeaserContainer = styled.div`
@@ -18,8 +26,12 @@ const TeaserContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
 `;
 
-const Teaser = styled(Image)`
+const TeaserLarge = styled(Image)`
   height: ${40 * 9}px;
+`
+
+const TeaserTiny = styled(Image)`
+  height: ${20 * 9}px;
 `
 
 const Seperator = styled.div`
@@ -60,29 +72,33 @@ const Content = styled.div`
 `;
 
 export type NewsCardProps = PropsWithChildren<{
-  imageSrc: string;
+  image: { url: string; alt: string };
   headLine: string;
   date: string;
 }>;
 
 export const NewsCard: React.FC<NewsCardProps> = ({
-  imageSrc,
+  image,
   headLine,
   date,
   children
 }) => {
-  const contentRef = useRef(null)
+  const { upTo } = useScreenSize();
+  const contentRef = useRef(null);
 
   useEffect(() => {
     if (contentRef.current !== null) {
       new Dotdotdot(contentRef.current)
     }
-  }, [contentRef.current])
+  }, [contentRef.current]);
+
+  const ContainerC = upTo("tiny") ? ContainerTiny : ContainerLarge;
+  const TeaserC = upTo("tiny") ? TeaserTiny : TeaserLarge;
 
   return (
-    <Container>
+    <ContainerC>
       <TeaserContainer>
-        <Teaser src={imageSrc} alt="bla" />
+        <TeaserC src={image.url} alt={image.alt} />
       </TeaserContainer>
       <Seperator />
       <InformationSection>
@@ -92,6 +108,6 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           {children}
         </Content>
       </InformationSection>
-    </Container>
+    </ContainerC>
   );
 };

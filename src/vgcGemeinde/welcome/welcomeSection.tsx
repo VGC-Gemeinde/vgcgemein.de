@@ -1,22 +1,40 @@
 import styled from "styled-components";
 import { Link } from "../../components/link";
 import { VgcGemeindeEmblem } from "../branding/emblem";
+import { useScreenSize } from "../../hooks/useScreenSize";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.gallade};
-  padding: ${({ theme }) => theme.spacing.padding.gigantic};
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+const ContainerLarge = styled(Container)`
+  padding: ${({ theme }) => theme.spacing.padding.gigantic};
+`;
+
+const ContainerTiny = styled(Container)`
+  padding-top: ${({ theme }) => theme.spacing.padding.large};
+  padding-bottom: ${({ theme }) => theme.spacing.padding.large};
+  padding-left: ${({ theme }) => theme.spacing.padding.small};
+  padding-right: ${({ theme }) => theme.spacing.padding.small};
+`;
+
 const InnerWelcomeSection = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: ${({ theme }) => theme.sizes.maxContentWidth};
   width: 100%;
+  align-items: center;
 `;
+
+const InnerWelcomeSectionLarge = styled(InnerWelcomeSection)`
+  justify-content: space-between;
+`
+
+const InnerWelcomeSectionTiny = styled(InnerWelcomeSection)`
+  justify-content: center;
+`
 
 const TeaserText = styled.div`
   display: flex;
@@ -52,9 +70,14 @@ const Emblem = styled(VgcGemeindeEmblem)`
 `;
 
 export const WelcomeSection: React.FC = () => {
+    const { upTo, downTo } = useScreenSize();
+
+    const ContainerC = upTo("tiny") ? ContainerTiny : ContainerLarge;
+    const InnerWelcomeSectionC = upTo("tiny") ? InnerWelcomeSectionTiny : InnerWelcomeSectionLarge;
+
     return (
-        <Container>
-            <InnerWelcomeSection>
+        <ContainerC>
+            <InnerWelcomeSectionC>
               <TeaserText>
                 <TeaserTextHeading>VGC Gemeinde</TeaserTextHeading>
                 <p>
@@ -66,10 +89,12 @@ export const WelcomeSection: React.FC = () => {
                   Trete dem Discord bei!
                 </TeaserCallToAction>
               </TeaserText>
-              <EmblemContainer>
-                <Emblem />
-              </EmblemContainer>
-            </InnerWelcomeSection>
-        </Container>
+              { downTo("small") && (
+                <EmblemContainer>
+                  <Emblem />
+                </EmblemContainer>
+              )}
+            </InnerWelcomeSectionC>
+        </ContainerC>
     )
 }

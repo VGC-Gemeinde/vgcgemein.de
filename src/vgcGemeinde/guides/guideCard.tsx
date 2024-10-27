@@ -1,15 +1,23 @@
 import styled from "styled-components";
 import { Icon } from "../../components/icon";
 import { FaRegClock } from "react-icons/fa6";
+import { useScreenSize } from "../../hooks/useScreenSize";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 420px;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
   border: 1px solid black;
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.gallade};
+`;
+
+const ContainerLarge = styled(Container)`
+  width: 420px;
+`;
+
+const ContainerTiny = styled(Container)`
+  width: 320px;
 `;
 
 const HeadLineContainer = styled.div`
@@ -56,8 +64,12 @@ export const GuideCard: React.FC<GuideCardProps> = ({
   description,
   timeToRead,
 }) => {
+  const { upTo } = useScreenSize();
+
+  const ContainerC = upTo("tiny") ? ContainerTiny : ContainerLarge;
+
   return (
-    <Container>
+    <ContainerC>
       <HeadLineContainer>
         {headLine}
       </HeadLineContainer>
@@ -69,6 +81,6 @@ export const GuideCard: React.FC<GuideCardProps> = ({
           {timeToRead}
         </TimeToRead>
       </InformationSection>
-    </Container>
+    </ContainerC>
   );
 };

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "../components/link";
 import { VgcGemeindeIcon } from "../vgcGemeinde/branding/icon";
 import { useEffect, useState } from "react";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 const Container = styled.footer`
   display: flex;
@@ -16,7 +17,16 @@ const Container = styled.footer`
 const LeftSide = styled.div`
   display: flex;
   justify-content: flex-start;
+`;
+
+const LeftSideLarge = styled(LeftSide)`
+  flex-direction: row;
   align-items: center;
+`;
+
+const LeftSideTiny = styled(LeftSide)`
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const RightSide = styled.div`
@@ -60,6 +70,10 @@ const Footer: React.FC = () => {
     number | "loading"
   >("loading");
 
+  const { upTo, downTo } = useScreenSize();
+
+  const LeftSideC = upTo("tiny") ? LeftSideTiny : LeftSideLarge;
+
   useEffect(() => {
     void (async () => {
       let response = await fetch(
@@ -77,7 +91,7 @@ const Footer: React.FC = () => {
 
   return (
     <Container>
-      <LeftSide>
+      <LeftSideC>
         <Icon />
         {legalRequirements.map(({ label, link }) => (
           <FooterLink to={link} key={label}>{label}</FooterLink>
@@ -88,16 +102,18 @@ const Footer: React.FC = () => {
         >
           Spenden
         </FooterLink>
-      </LeftSide>
-      <RightSide>
-        {[
-          "Größte deutschsprachige VGC Community",
-          "Heimat der VGC Bundesliga",
-          `Aktuelle Mitglieder: ${currentMemberCount}`,
-        ].map((text) => (
-          <FooterText key={text}>{text}</FooterText>
-        ))}
-      </RightSide>
+      </LeftSideC>
+      { downTo("large") && (
+        <RightSide>
+          {[
+            "Größte deutschsprachige VGC Community",
+            "Heimat der VGC Bundesliga",
+            `Aktuelle Mitglieder: ${currentMemberCount}`,
+          ].map((text) => (
+            <FooterText key={text}>{text}</FooterText>
+          ))}
+        </RightSide>
+      )}
     </Container>
   );
 };
