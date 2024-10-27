@@ -44,8 +44,8 @@ const theme = {
     maxContentWidth: "1400px"
   },
   breakpoints: {
-    tiny: 700,
-    small: 1300,
+    tiny: 1100,
+    small: 1550,
   },
   accessibility: {
     focussed: {

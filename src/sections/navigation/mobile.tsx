@@ -3,6 +3,7 @@ import { FaBars, FaX } from "react-icons/fa6";
 import styled, { useTheme } from "styled-components";
 import { navigationItemToLink, pages, socials } from "../../vgcGemeinde/links";
 import { useHeaderSize } from "../../hooks/useHeaderSize";
+import { theme } from "../../theme";
 
 const Navigation = styled.nav`
   display: flex;
@@ -22,7 +23,22 @@ const Popover = styled.div<{ $headerSize: number }>`
   display: flex;
   flex-direction: column;
 `;
-const NavigationItem = styled.div``;
+
+const NavigationItem = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: ${({ theme }) => theme.sizes.font.large};
+  font-weight: bold;
+  padding: ${({ theme }) => theme.spacing.padding.normal};
+  gap: ${({ theme }) => theme.spacing.buffer.normal};
+`;
+
+const NavigationItemPage = styled(NavigationItem)`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gallade};
+`;
+
 
 const MobileNavigation: React.FC = () => {
   const theme = useTheme();
@@ -54,7 +70,7 @@ const MobileNavigation: React.FC = () => {
       {isOpen && (
         <Popover $headerSize={headerSize}>
           {pages.map(navigationItemToLink()).map((link) => (
-            <NavigationItem>{link}</NavigationItem>
+            <NavigationItemPage>{link}</NavigationItemPage>
           ))}
           <NavigationItem>{socials.map(navigationItemToLink())}</NavigationItem>
         </Popover>

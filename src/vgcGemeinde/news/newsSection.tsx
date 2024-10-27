@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { NewsCard } from "./newsCard";
 import { ReactNode } from "react";
 import { Link } from "../../components/link";
+import { useScreenSize } from "../../hooks/useScreenSize";
 
 const Container = styled.div`
   padding: ${({ theme }) => theme.spacing.padding.gigantic};
@@ -16,6 +17,10 @@ const Content = styled.div`
   max-width: ${({ theme }) => theme.sizes.maxContentWidth};
 `;
 
+const ContentSmall = styled(Content)`
+  align-items: center;
+`
+
 const NewsSectionHeading = styled.div`
   font-size: ${({ theme }) => theme.sizes.font.gigantic};
   font-weight: bold;
@@ -29,16 +34,23 @@ const ToAllNews = styled(Link)`
 
 const NewsCards = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
   & > * {
-    margin-top: ${({ theme }) => theme.spacing.buffer.large};
-    margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
+    margin: ${({ theme }) => theme.spacing.buffer.large};
   }
 `;
+
+const NewsCardsLarge = styled(NewsCards)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
+
+const NewsCardsSmall = styled(NewsCards)`
+  flex-direction: column;
+  align-items: center;
+`
 
 export type News = {
   headLine: string;
@@ -53,11 +65,16 @@ export type NewsSectionProps = {
 }
 
 export const NewsSection: React.FC<NewsSectionProps> = ({ news }) => {
+    const { upTo } = useScreenSize()
+
+    const ContentC = upTo("small") ? ContentSmall : Content;
+    const NewsCardsC = upTo("small") ? NewsCardsSmall : NewsCardsLarge;
+
     return <Container>
-        <Content>
+        <ContentC>
             <NewsSectionHeading>News</NewsSectionHeading>
-            <NewsCards>
-            { news.slice(0, 4)
+            <NewsCardsC>
+            { news
                 .map(({ headLine, publishedDate: date, content, teaserImage }, index) => (
                     <NewsCard
                       key={headLine}
@@ -69,9 +86,9 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ news }) => {
                     </NewsCard>
                 ))
             }
-            </NewsCards>
+            </NewsCardsC>
             <ToAllNews to="/news">Alle News anschauen</ToAllNews>
-        </Content>
+        </ContentC>
     </Container>
 
 }

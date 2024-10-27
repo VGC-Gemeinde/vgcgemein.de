@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "../../components/link";
 import { GuideCard } from "./guideCard";
+import { useScreenSize } from "../../hooks/useScreenSize";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.gallade};
@@ -19,6 +20,10 @@ const Content = styled.div`
   color: ${({ theme }) => theme.colors.text.bright};
 `;
 
+const ContentSmall = styled(Content)`
+  align-items: center;
+`;
+
 const GuidesSectionHeading = styled.div`
   font-size: ${({ theme }) => theme.sizes.font.gigantic};
   font-weight: bold;
@@ -26,15 +31,22 @@ const GuidesSectionHeading = styled.div`
 
 const GuideCards = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
   & > * {
-    margin-top: ${({ theme }) => theme.spacing.buffer.large};
-    margin-bottom: ${({ theme }) => theme.spacing.buffer.large};
+    margin: ${({ theme }) => theme.spacing.buffer.large};
   }
+`;
+
+const GuideCardsLarge = styled(GuideCards)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const GuideCardsSmall = styled(GuideCards)`
+  flex-direction: column;
+  align-items: center;
 `;
 
 const ToAllGuides = styled(Link)`
@@ -55,14 +67,19 @@ export type GuidesSectionProps = {
 }
 
 export const GuidesSection: React.FC<GuidesSectionProps> = ({ guides }) => {
+    const { upTo } = useScreenSize();
+
+    const ContentC = upTo("small") ? ContentSmall : Content;
+    const GuideCardsC = upTo("small") ? GuideCardsSmall : GuideCardsLarge;
+
     return (
         <Container>
-            <Content>
+            <ContentC>
                 <GuidesSectionHeading>
                     Guides
                 </GuidesSectionHeading>
-                <GuideCards>
-                    { guides.slice(0, 3)
+                <GuideCardsC>
+                    { guides
                         .map(({ headLine, description, timeToRead }, index) => (
                             <GuideCard
                               key={headLine}
@@ -72,9 +89,9 @@ export const GuidesSection: React.FC<GuidesSectionProps> = ({ guides }) => {
                             />
                         ))
                     }
-                </GuideCards>
+                </GuideCardsC>
                 <ToAllGuides to="/guides">Alle Guides anschauen</ToAllGuides>
-            </Content>
+            </ContentC>
         </Container>
     );
 }
