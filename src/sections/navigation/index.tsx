@@ -1,6 +1,8 @@
 import { useScreenSize } from "../../hooks/useScreenSize";
-import { MobileNavigation } from "./mobile";
 import { DesktopNavigation } from "./desktop";
+import { lazy } from "react";
+
+const MobileNavigation = lazy(() => import("./mobile"));
 
 const Navigation: React.FC = () => {
   const { upTo } = useScreenSize();

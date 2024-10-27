@@ -43,7 +43,7 @@ const NavigationItemPage = styled(NavigationItem)`
 `;
 
 
-const MobileNavigation: React.FC = () => {
+export const MobileNavigation: React.FC = () => {
   const theme = useTheme();
   const headerSize = useHeaderSize();
   const [isOpen, setIsOpen] = useState(false);
@@ -90,4 +90,4 @@ const MobileNavigation: React.FC = () => {
   );
 };
 
-export { MobileNavigation };
+export default MobileNavigation;
