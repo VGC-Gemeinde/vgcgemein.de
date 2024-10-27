@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
       <LeftSide>
         <Icon />
         {legalRequirements.map(({ label, link }) => (
-          <FooterLink to={link}>{label}</FooterLink>
+          <FooterLink to={link} key={label}>{label}</FooterLink>
         ))}
         <FooterLink
           to="https://www.paypal.com/paypalme/vgcgemeinde"
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
           "Heimat der VGC Bundesliga",
           `Aktuelle Mitglieder: ${currentMemberCount}`,
         ].map((text) => (
-          <FooterText>{text}</FooterText>
+          <FooterText key={text}>{text}</FooterText>
         ))}
       </RightSide>
     </Container>

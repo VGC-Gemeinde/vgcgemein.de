@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import 'dotenv/config';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -17,6 +18,14 @@ const config: GatsbyConfig = {
         fonts: [`roboto`],
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.CMS_ACCESS_TOKEN,
+      },
+    },
+    `gatsby-plugin-image`,
   ],
   jsxRuntime: "automatic",
 };

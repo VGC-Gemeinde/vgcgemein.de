@@ -1,6 +1,7 @@
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { NewsCard } from "./newsCard";
+import { ReactNode } from "react";
+import { Link } from "../../components/link";
 
 const Container = styled.div`
   padding: ${({ theme }) => theme.spacing.padding.gigantic};
@@ -41,10 +42,11 @@ const NewsCards = styled.div`
 
 export type News = {
   headLine: string;
-  date: string;
-  description: string;
-  imageSrc: string;
+  publishedDate: string;
+  content: ReactNode;
+  teaserImage: { url: string, description: string };
 };
+
 
 export type NewsSectionProps = {
     news: News[];
@@ -56,14 +58,15 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ news }) => {
             <NewsSectionHeading>News</NewsSectionHeading>
             <NewsCards>
             { news.slice(0, 4)
-                .map(({ headLine, date, description, imageSrc }, index) => (
+                .map(({ headLine, publishedDate: date, content, teaserImage }, index) => (
                     <NewsCard
                       key={headLine}
                       headLine={headLine}
                       date={date}
-                      description={description}
-                      imageSrc={imageSrc}
-                    />
+                      imageSrc={teaserImage.url}
+                    >
+                      { content }
+                    </NewsCard>
                 ))
             }
             </NewsCards>

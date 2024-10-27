@@ -2,6 +2,7 @@ import { IconType } from "react-icons";
 import { FaDiscord, FaTwitch, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Icon } from "../components/icon";
 import { Link, LinksProps } from "../components/link";
+import { ReactElement } from "react";
 
 type NavigationItem = {
   label: string;
@@ -74,7 +75,7 @@ const navigationItemToLink =
       Component: Link,
     }
   ) =>
-  ({ label, link, icon, newTab }: NavigationItem) => {
+  ({ label, link, icon, newTab }: NavigationItem): ReactElement<LinksProps, any> => {
     const renderedLabel = icon ? <Icon label={label} icon={icon} /> : label;
     return (
       <options.Component to={link} target={newTab ? "_blank" : undefined}>

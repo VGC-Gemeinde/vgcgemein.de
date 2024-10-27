@@ -27,7 +27,7 @@ const DesktopNavigation: React.FC = () => {
       {navigationItems
         .map(navigationItemToLink({ Component: NavigationLink }))
         .map((link) => (
-          <NavigationItem>{link}</NavigationItem>
+          <NavigationItem key={link.props.to}>{link}</NavigationItem>
         ))}
     </Navigation>
   );

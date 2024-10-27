@@ -19,6 +19,8 @@ export const wrapRootElement: React.FC<WrapRootElementBrowserArgs> = ({
 }) => (
   <>
     <GlobalStyle />
-    <ThemeProvider theme={theme}>{element}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        {element}
+      </ThemeProvider>
   </>
 );

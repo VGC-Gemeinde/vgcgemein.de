@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Image } from "../../components/image";
+import { PropsWithChildren, useEffect, useRef } from "react";
+import Dotdotdot from "dotdotdot-js";
 
 const Container = styled.div`
   display: flex;
@@ -49,31 +51,46 @@ const Date = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.buffer.normal};
 `;
 
-const Description = styled.div``;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.buffer.small };
+  font-size: ${({ theme }) => theme.sizes.font.normal};
+  height: 150px;
+`;
 
-export type NewsCardProps = {
+export type NewsCardProps = PropsWithChildren<{
   imageSrc: string;
   headLine: string;
   date: string;
-  description: string;
-};
+}>;
 
 export const NewsCard: React.FC<NewsCardProps> = ({
   imageSrc,
   headLine,
   date,
-  description,
+  children
 }) => {
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    if (contentRef.current !== null) {
+      new Dotdotdot(contentRef.current)
+    }
+  }, [contentRef.current])
+
   return (
     <Container>
       <TeaserContainer>
-        <Teaser src={imageSrc} alt={description} />
+        <Teaser src={imageSrc} alt="bla" />
       </TeaserContainer>
       <Seperator />
       <InformationSection>
         <HeadLine>{headLine}</HeadLine>
         <Date>{date}</Date>
-        <Description>{description}</Description>
+        <Content ref={contentRef}>
+          {children}
+        </Content>
       </InformationSection>
     </Container>
   );

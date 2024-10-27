@@ -1,43 +1,15 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { graphql, type HeadFC, type PageProps } from "gatsby";
 import { DefaultLayout } from "../layouts/default";
 import { Seperator } from "../components/seperator";
-import regH from "../images/reg-h.jpeg";
-import epTeiler from "../images/ep-teiler.jpeg";
-import worlds from "../images/worlds.jpeg";
 import { News, NewsSection } from "../vgcGemeinde/news/newsSection";
 import { WelcomeSection } from "../vgcGemeinde/welcome/welcomeSection";
 import { Guide, GuidesSection } from "../vgcGemeinde/guides/guidesSection";
+import { ContentfulRichTextGatsbyReference, renderRichText, RenderRichTextData } from "gatsby-source-contentful/rich-text"
+import { NewsCardRenderTextOptions } from "../gatsbyRichTextOptions";
 
-const news: News[] = [
-  {
-    headLine: "EP-Teiler Episode 1",
-    date: "13. August 2024",
-    description:
-      "In der ersten Folge des EP-Teiler Podcasts beantworten die Admins @TanobaumVGC & @TractieVGC die Fragen der Community.",
-    imageSrc: epTeiler,
-  },
-  {
-    headLine: "Übungsturnier #9",
-    date: "16. August 2024",
-    description:
-      "Du suchst ein Trainingsturnier für Regulation H? Dann haben wir etwas für dich!",
-    imageSrc: regH,
-  },
-  {
-    headLine: "Worlds Invites der Gemeinde",
-    date: "12. August 2024",
-    description:
-      "Es sind 26 VGC Gemeinde Mitglieder, die sich für die Weltmeisterschaft qualifiziert haben 🔥💪🏻",
-    imageSrc: worlds,
-  },
-  {
-    headLine: "Worlds Invites der Gemeinde 2",
-    date: "12. August 2024",
-    description:
-      "Es sind 26 VGC Gemeinde Mitglieder, die sich für die Weltmeisterschaft qualifiziert haben 🔥💪🏻",
-    imageSrc: worlds,
-  },
-];
+type ApiNews = Omit<News, "content"> & {
+  content: RenderRichTextData<ContentfulRichTextGatsbyReference>;
+}
 
 const guides: Guide[] = [
   {
@@ -58,12 +30,14 @@ const guides: Guide[] = [
 ]
 
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps<{ allContentfulNews: { nodes: ApiNews[] } }>> = ({ data }) => {
+  console.log({ data })
+
   return (
     <DefaultLayout>
       <WelcomeSection />
       <Seperator direction="FILLED_TO_UNFILLED" />
-      <NewsSection news={ news } />
+      <NewsSection news={ data.allContentfulNews.nodes.map((news) => ({ ...news, content: renderRichText(news.content, NewsCardRenderTextOptions) })) } />
       <Seperator direction="UNFILLED_TO_FILLED" />
       <GuidesSection guides={ guides } />
     </DefaultLayout>
@@ -73,3 +47,29 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>VGC Gemeinde</title>;
+
+export const assetQuery = graphql`
+  query NewsQuery {
+    allContentfulNews(sort: { publishedDate: DESC } limit: 4 filter: { showOnFeed: { eq: true }}) {
+      nodes {
+        headLine
+        publishedDate
+        content {
+          raw
+          references {
+            ... on ContentfulAsset {
+              contentful_id
+              __typename
+              gatsbyImageData
+              description
+            }
+          }
+        }
+        teaserImage { 
+          url
+          description
+        }
+      }
+    }
+  } 
+`
