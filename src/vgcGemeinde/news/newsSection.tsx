@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { NewsCard } from "./newsCard";
-import { ReactNode } from "react";
 import { Link } from "../../components/link";
 import { useScreenSize } from "../../hooks/useScreenSize";
+import { lazy, ReactNode } from "react";
+
+const NewsCard = lazy(() => import("./newsCard"));
 
 const Container = styled.div`
   display: flex;
@@ -87,7 +88,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ news }) => {
         <ContentC>
             <NewsSectionHeading>News</NewsSectionHeading>
             <NewsCardsC>
-            { news
+            { typeof window !== "undefined" && news
                 .map(({ headLine, publishedDate: date, content, teaserImage }, index) => (
                     <NewsCard
                       key={headLine}

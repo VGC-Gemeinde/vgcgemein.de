@@ -111,3 +111,5 @@ export const NewsCard: React.FC<NewsCardProps> = ({
     </ContainerC>
   );
 };
+
+export default NewsCard;
