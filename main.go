@@ -5,6 +5,8 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+
+	"github.com/VGC-Gemeinde/vgcgemein.de/ui"
 )
 
 func main() {
@@ -12,6 +14,9 @@ func main() {
 	mux := http.NewServeMux()
 	port := 8080
 	addr := fmt.Sprintf(":%d", port)
+
+	mux.Handle("GET /", http.FileServerFS(ui.Content))
+	mux.Handle("GET /{any}", ui.Handle())
 
 	logger.Info("starting server...", "addr", addr)
 	err := http.ListenAndServe(addr, mux)
