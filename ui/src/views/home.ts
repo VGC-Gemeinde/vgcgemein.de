@@ -1,10 +1,14 @@
 
-import { html, LitElement } from "lit";
+import { css, html, LitElement } from "lit";
 
 class Home extends LitElement {
+	static styles = css``;
+
 	render() {
 		return html`
-      VGC Gemeinde
+			<vg-hcf-layout>
+				Home - VGC Gemeinde
+			</vg-hcf-layout>
     `;
 	}
 }

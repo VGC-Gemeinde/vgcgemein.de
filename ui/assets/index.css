@@ -1,0 +1,20 @@
+:root {
+  --max-content-width: 1280px;
+  --falinks-blue: #021f66;
+  --pawmi-orange: #ff7b00;
+
+  --content-padding: 5px;
+  --header-padding: 5px;
+  --header-orientation: center;
+}
+
+@media screen and (min-width: 992px) {
+  :root {
+    --content-padding: 20px;
+    --header-orientation: flex-start;
+  }
+}
+
+body {
+  margin: 0;
+}
