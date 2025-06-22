@@ -11,14 +11,7 @@ class HeaderContentFooterLayout extends LitElement {
 
   .container * {
     width: 100%;
-  }
-
-  main {
-    box-sizing: border-box;
-    padding: var(--content-padding);
-    max-width: var(--max-content-width);
-  }
-	`;
+  }`;
 
 	render() {
 		return html`

@@ -3,16 +3,22 @@ import { css, html, LitElement } from "lit";
 class Header extends LitElement {
 	static styles = css`
 		.header {
-			display: flex;
-			flex-direction: row;
-      justify-content: var(--header-orientation);
 			height: 50px;
       padding: var(--header-padding);
       box-sizing: border-box;
-      border-bottom: 2px solid var(--pawmi-orange); 
+      border-bottom: 3px solid var(--pawmi-orange); 
 		}
 
-		.header * {
+		.header-inner {
+			display: flex;
+			flex-direction: row;
+			max-width: var(--max-content-width);
+			margin: auto;
+      justify-content: flex-start;
+			height: 100%;
+		}
+
+		.header-inner * {
 			max-height: 100%;
 		}
 	`;
@@ -20,9 +26,11 @@ class Header extends LitElement {
 	render() {
 		return html`
       <header class="header">
-				<a href="/">
-					<img src="/assets/images/logo.png" alt="VGC Gemeinde">
-				</a>
+				<div class="header-inner">
+					<a href="/">
+						<img src="/assets/images/logo-blue.svg" alt="VGC Gemeinde">
+					</a>
+				</div>
 			</header>
     `;
 	}
