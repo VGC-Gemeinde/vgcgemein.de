@@ -161,6 +161,36 @@ class Home extends LitElement {
 			line-height: 1.3;
 		}
 
+		.admins {
+			display: flex;
+			flex-direction: row;
+			gap: 20px;
+		}
+
+		.admin {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 10px;
+		}
+
+		.admin img {
+			width: 125px;
+			height: 125px;
+			border-radius: 50%;
+			margin-bottom: 10px;
+			gap: 3px;
+		}
+
+		.name {
+			font-weight: 700;
+		}
+
+		.role {
+			font-size: 12px;
+			font-weight: 400;
+		}
+
 		h1 {
 			margin: 0;
 		}
@@ -247,11 +277,76 @@ class Home extends LitElement {
 									Teilnehmerrekord aufgestellt. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches
 									aus bis am Ende ein Sieger feststeht. Das ganze wird auch noch durch unser wöchentliches Match of the Week begleitet in dem jeweils
 									ein Match von unseren besten Castern kommentiert wird. Das ganze ist auf
-									<a href="https://www.youtube.com/@VGC_Gemeinde">unserem YouTube-Channel</a> zu finden.
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://www.youtube.com/@VGC_Gemeinde">
+									unserem YouTube-Channel</a> zu finden.
 								</p>
 							</div>
 							<div class="video">
 								<iframe width="560" height="315" src="https://www.youtube.com/embed/91oUiRnGoZk?si=xq3-RRh0W2hwlLtf" allowfullscreen frameborder="0"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="odd-to-even"></div>
+				<div class="even section">
+					<div class="content">
+						<div class="text-with-image">
+							<div class="text-with-heading">
+								<h1>EP-Teiler</h1>
+								<p>
+									Der EP-Teiler ist unser Podcastformat indem wir ganz entspannt mit nennenswerten Mitgliedern der Gemeinde oder der weiteren
+									VGC-Community über die verschiedensten Themen reden. Von großen Erfolgen bei Tunieren über Einblicke in Teile der Community
+									die etwas zu wenig Aufmerksamkeit bekommen bis hin zu berüchtigten Blicken hinter die Kulissen werden hier alle Stories
+									erzählt. Aber halt immer bei kuschliger Atmosphere und mit dem ein oder anderem Meme. Falls du mal reinhören möchtest findest
+									du die Playlist 
+									<a 
+									target="_blank"
+									rel="noopener noreferrer"
+									href="https://www.youtube.com/watch?v=qqQBQdm2-9o&list=PLkvKoUnKhLVk3bS6k2rMUP2s1xX58ZhSz">
+									hier</a>.
+								</p>
+							</div>
+							<div class="video">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/qqQBQdm2-9o?si=RXVF7eCuFHOmcK_k" allowfullscreen frameborder="0"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="even-to-odd"></div>
+				<div class="odd section">
+					<div class="content">
+						<div class="text-with-image">
+							<div class="text-with-heading">
+								<h1>Staff-Team</h1>
+								<p>
+									Hinter diesen vielzahligen Projekten der VGC Gemeinde steht mittlerweile ein großes Team an Helfern und Helferinnen. Der
+									Gemeinde-Staff besteht mittlerweile aus ca. 40 Mitgliedern die sich in über 15 aufgabenbezogenen Teams organisieren. Die
+									Teams sind jedoch nur sehr locker voneinander getrennt und jeder mit genug Motivation darf überall mithelfen. Ein besonderer
+									Dank gilt hier unserem Admin-Team, die ein Überblick über alle Teams haben und Ordnung in das Chaos bringen. Falls du auch mit
+									anpacken möchtest trette dem
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://discord.com/invite/Qb8RMupASu"
+									>
+									Discord</a>
+									bei und melde dich bei uns!
+								</p>
+							</div>
+							<div class="admins">
+								<div class="admin">
+									<img src="/assets/images/tano.jpg">
+									<div class="name">Tano</div>
+									<div class="role">Admin</div>
+								</div>
+								<div class="admin">
+									<img src="/assets/images/vivi.png">
+									<div class="name">Vivi</div>
+									<div class="role">Admin</div>
+								</div>
 							</div>
 						</div>
 					</div>
