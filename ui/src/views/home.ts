@@ -12,14 +12,30 @@ class Home extends LitElement {
 			background: var(--falinks-blue);
 		}
 
+		.even-section {
+			color: var(--falinks-blue);
+			background: var(--wooloo-white);
+		}
+
 		.odd-to-even {
-			height: calc(0.015 * 100vw);
+			height: calc(0.01 * 100vw);
 			background: linear-gradient(
 				to bottom right,
 				var(--falinks-blue) 0%,
 				var(--falinks-blue) 49%,
 				var(--wooloo-white) 50%,
 				var(--wooloo-white) 100%
+			);
+		}
+
+		.even-to-odd {
+			height: calc(0.01 * 100vw);
+			background: linear-gradient(
+				to bottom right,
+				var(--wooloo-white) 0%,
+				var(--wooloo-white) 49%,
+				var(--falinks-blue) 50%,
+				var(--falinks-blue) 100%
 			);
 		}
 
@@ -32,6 +48,7 @@ class Home extends LitElement {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			gap: var(--content-padding);
 		}
 
 		.teaser {
@@ -64,6 +81,43 @@ class Home extends LitElement {
 		.join:hover {
 			background: var(--pawmi-orange);
 		}
+
+		.text-with-image {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			max-width: 850px;
+			gap: 30px;
+		}
+
+		.text-with-image h1 {
+			border-bottom: 2px solid var(--pawmi-orange);
+		}
+
+		.text-with-image img {
+			width: 55%;
+			filter: drop-shadow(0px 0px 5px var(--zekrom-black));
+		}
+
+		@media screen and (max-width: 992px) {
+			.text-with-image img {
+				display: none;
+			}
+		}
+
+		.text-with-heading {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			line-height: 1.3;
+		}
+
+		h1 {
+			margin: 0;
+		}
+		p {
+			margin: 0;
+		}
 	`;
 
 	render() {
@@ -83,6 +137,23 @@ class Home extends LitElement {
 					</div>
 				</div>
 				<div class="odd-to-even"></div>
+				<div class="even-section">
+					<div class="content">
+						<div class="text-with-image">
+							<div class="text-with-heading">
+								<h1>Community</h1>
+								<p>
+									Wir sind mit über 800 Mitgliedern die größte deutschprachige VGC-Community überhaupt. Seit Ende 2022 bringen wir Pokemon-Begeisterte
+									aus der ganzen DACH-Region zusammen für Tuniere, Community-Events, Trainingssession und mehr. Der aktive Discord-Server ist ein
+									Austauschort für alle, egal ob kompetitiv oder casual. Als Community haben wir ein Gemeinschaftsgefühl gefunden das es so vor der Gründung
+									der VGC Gemeinde nicht gab.
+								</p>
+							</div>
+							<img src="/assets/images/community.jpeg">
+						</div>
+					</div>
+				</div>
+				<div class="even-to-odd"></div>
 			</vg-hcf-layout>
     `;
 	}
