@@ -21,6 +21,10 @@ class Header extends LitElement {
 		.header-inner * {
 			max-height: 100%;
 		}
+
+		.header-inner img {
+			height: 100%;
+		}
 	`;
 
 	render() {

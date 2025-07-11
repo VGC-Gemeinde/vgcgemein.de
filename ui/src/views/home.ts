@@ -7,18 +7,30 @@ import Twitch from "@fortawesome/fontawesome-free/svgs/brands/twitch.svg";
 
 class Home extends LitElement {
 	static styles = css`
-		.odd-section {
+		.odd {
 			color: var(--wooloo-white);
 			background: var(--falinks-blue);
 		}
 
-		.even-section {
+		.even {
 			color: var(--falinks-blue);
 			background: var(--wooloo-white);
 		}
 
+		.section {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		@media screen and (max-width: 992px) {
+			.section {
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+		}
+
 		.odd-to-even {
-			height: calc(0.01 * 100vw);
+			height: calc(0.015 * 100vw);
 			background: linear-gradient(
 				to bottom right,
 				var(--falinks-blue) 0%,
@@ -29,7 +41,7 @@ class Home extends LitElement {
 		}
 
 		.even-to-odd {
-			height: calc(0.01 * 100vw);
+			height: calc(0.015 * 100vw);
 			background: linear-gradient(
 				to bottom right,
 				var(--wooloo-white) 0%,
@@ -90,6 +102,10 @@ class Home extends LitElement {
 			gap: 30px;
 		}
 
+		.odd .text-with-image {
+			flex-direction: row-reverse;
+		}
+
 		.text-with-image h1 {
 			border-bottom: 2px solid var(--pawmi-orange);
 		}
@@ -99,10 +115,43 @@ class Home extends LitElement {
 			filter: drop-shadow(0px 0px 5px var(--zekrom-black));
 		}
 
+		.text-with-image .video {
+			position: relative;
+			min-width: 55%;
+			max-width: 55%;
+			height: 350px;
+			filter: drop-shadow(0px 0px 5px var(--zekrom-black));
+		}
+
+		.video iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
 		@media screen and (max-width: 992px) {
+			.text-with-image {
+				flex-direction: column !important;
+			}
+
 			.text-with-image img {
+				width: 100%;
+			}
+
+			.text-with-image .video {
+				min-width: 100%;
+				max-width: 100%;
+			}
+
+			.hide-for-mobile {
 				display: none;
 			}
+		}
+
+		.text-with-image a {
+			color: var(--pawmi-orange);
 		}
 
 		.text-with-heading {
@@ -123,7 +172,7 @@ class Home extends LitElement {
 	render() {
 		return html`
 			<vg-hcf-layout>
-				<div class="odd-section">
+				<div class="odd section">
 					<div class="content">
 						<div class="teaser">
 							<img src="/assets/images/logo-full-white.svg" alt="VGC Gemeinde">
@@ -137,7 +186,7 @@ class Home extends LitElement {
 					</div>
 				</div>
 				<div class="odd-to-even"></div>
-				<div class="even-section">
+				<div class="even section">
 					<div class="content">
 						<div class="text-with-image">
 							<div class="text-with-heading">
@@ -149,11 +198,64 @@ class Home extends LitElement {
 									der VGC Gemeinde nicht gab.
 								</p>
 							</div>
-							<img src="/assets/images/community.jpeg">
+							<img class="hide-for-mobile" src="/assets/images/community.jpeg">
 						</div>
 					</div>
 				</div>
 				<div class="even-to-odd"></div>
+				<div class="odd section">
+					<div class="content">
+						<div class="text-with-image">
+							<div class="text-with-heading">
+								<h1>Bescheidene Anfänge</h1>
+								<p>
+									Unser Gründer Tractie rief zu Beginn der Karmesin und Purpur Ära die VGC Gemeinde ins Leben als Weg um andere Spieler und Spielerinnen
+									kennenzulernen, die auch im neuen Spiel aktiv werden möchten und mit diesen zu connecten. Beim ersten Zusammentreffen der frühsten
+									Gemeindemitglieder beim Bochum Regional 2023 entstand das erste Gemeindefoto. Ein Foto was schnell zur Tradition wurde auf allen 
+									nahegelegenen Regionals. Damals war aber noch unklar wie viele Mitglieder das Foto in Zukunft noch befüllen würden...
+							</div>
+							<img src="/assets/images/gemeindefoto-2023-bochum-regional.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="odd-to-even"></div>
+				<div class="even section">
+					<div class="content">
+						<div class="text-with-image">
+							<div class="text-with-heading">
+								<h1>Regionals</h1>
+								<p>
+									Mittlerweile werden die offiziellen Regional Championships in Deutschland und Umgebung immer für ein großes Zusammentreffen genutzt.
+									Eine unglaubliche Menge an Gemeindemitgliedern findet sich zusammen und nehmen am Tunier teil. Die Stimmung zwischen den Runden ist
+									einzgiartig. Es wird sich gemeinsam entspannt und sich gegenseitig für die restlichen Runden motiviert. Auch nach dem Tunier finden
+									sich immer Gruppen für Abendaktivitäten. Und zum Abschluss des Tuniertags gibt es immer die Mittlerweile-Tradition das Gemeindefoto.
+									Beim Dortmund-Regional im September 2024 haben sich über 60 Leute für das Foto zusammengefunden. Wahnsinn!
+								</p>
+							</div>
+							<img src="/assets/images/gemeindefoto-2024-dortmund-regional.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="even-to-odd"></div>
+				<div class="odd section">
+					<div class="content">
+						<div class="text-with-image">
+							<div class="text-with-heading">
+								<h1>Bundesliga</h1>
+								<p>
+									Die VGC Bundesliga ist unser größtes Tunier. Mit 180 Anmeldungen hat die vergangne 8. Iteration des Tuniers auch wieder einen neuen
+									Teilnehmerrekord aufgestellt. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches
+									aus bis am Ende ein Sieger feststeht. Das ganze wird auch noch durch unser wöchentliches Match of the Week begleitet in dem jeweils
+									ein Match von unseren besten Castern kommentiert wird. Das ganze ist auf
+									<a href="https://www.youtube.com/@VGC_Gemeinde">unserem YouTube-Channel</a> zu finden.
+								</p>
+							</div>
+							<div class="video">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/91oUiRnGoZk?si=xq3-RRh0W2hwlLtf" allowfullscreen frameborder="0"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
 			</vg-hcf-layout>
     `;
 	}
