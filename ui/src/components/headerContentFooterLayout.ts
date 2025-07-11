@@ -20,7 +20,7 @@ class HeaderContentFooterLayout extends LitElement {
         <main>
           <slot></slot>
         </main>
-        <footer></footer>
+        <vg-footer></vg-footer>
       </div>
     `;
 	}

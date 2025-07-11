@@ -47,7 +47,6 @@ class Home extends LitElement {
 		}
 
 		.join {
-			outline: none;
 			border: 3px solid var(--pawmi-orange);
 			border-radius: 20px;
 			padding-top: 10px;
@@ -56,8 +55,8 @@ class Home extends LitElement {
 			padding-right: 15px;
 			color: var(--falinks-blue);
 			font-weight: 500;
-			font-family: inherit;
 			font-size: 1.5em;
+			text-decoration: none;
 			background: var(--wooloo-white);
 			transition: background 0.5s;
 		}
@@ -74,7 +73,12 @@ class Home extends LitElement {
 					<div class="content">
 						<div class="teaser">
 							<img src="/assets/images/logo-full-white.svg" alt="VGC Gemeinde">
-							<button class="join">Discord beitreten</button>
+							<a
+								class="join"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://discord.com/invite/Qb8RMupASu"
+							>Discord beitreten</a>
 						</div>
 					</div>
 				</div>
