@@ -1,5 +1,5 @@
 build:
-	@cd ui && npm run build
+	@cd ui && npm install && npm run build
 	@go build -o build/vgcgemein.de-server main.go
 
 watch:
