@@ -273,15 +273,15 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Bundesliga</h1>
 								<p>
-									Die VGC Bundesliga ist unser größtes Tunier. Mit 180 Anmeldungen hat die vergangne 8. Iteration des Tuniers auch wieder einen neuen
-									Teilnehmerrekord aufgestellt. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches
-									aus bis am Ende ein Sieger feststeht. Das ganze wird auch noch durch unser wöchentliches Match of the Week begleitet in dem jeweils
-									ein Match von unseren besten Castern kommentiert wird. Das ganze ist auf
+									Die VGC Bundesliga ist unser größtes Tunier. Mit 180 Anmeldungen war die vergangne 8. Iteration des Tuniers auch wieder ein großer
+									Erfolg. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches aus bis am Ende ein
+									Sieger feststeht. Das ganze wird auch noch durch unser wöchentliches Match of the Week begleitet in dem jeweils ein Match von unseren
+									besten Castern kommentiert wird. Das ganze ist auf
 									<a
 										target="_blank"
 										rel="noopener noreferrer"
 										href="https://www.youtube.com/@VGC_Gemeinde">
-									unserem YouTube-Channel</a> zu finden.
+									unserem YouTube-Kanal</a> zu finden.
 								</p>
 							</div>
 							<div class="video">
@@ -326,7 +326,7 @@ class Home extends LitElement {
 									Gemeinde-Staff besteht mittlerweile aus ca. 40 Mitgliedern die sich in über 15 aufgabenbezogenen Teams organisieren. Die
 									Teams sind jedoch nur sehr locker voneinander getrennt und jeder mit genug Motivation darf überall mithelfen. Ein besonderer
 									Dank gilt hier unserem Admin-Team, die ein Überblick über alle Teams haben und Ordnung in das Chaos bringen. Falls du auch mit
-									anpacken möchtest trette dem
+									anpacken möchtest trete dem
 									<a
 										target="_blank"
 										rel="noopener noreferrer"

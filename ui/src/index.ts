@@ -4,6 +4,7 @@ import "./app.js";
 
 // views
 import "./views/home.js";
+import "./views/impressum.js"
 import "./views/notFound.js";
 
 // components
