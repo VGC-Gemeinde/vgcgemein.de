@@ -1,5 +1,5 @@
 
-import { css, html, LitElement } from "lit";
+import { css, html, LitElement, PropertyValues } from "lit";
 import Discord from "@fortawesome/fontawesome-free/svgs/brands/discord.svg";
 import YouTube from "@fortawesome/fontawesome-free/svgs/brands/youtube.svg";
 import Twitter from "@fortawesome/fontawesome-free/svgs/brands/square-x-twitter.svg";
@@ -67,7 +67,7 @@ class Home extends LitElement {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: 15px;
+			gap: 30px;
 			margin: 20px;
 		}
 
@@ -197,11 +197,70 @@ class Home extends LitElement {
 		p {
 			margin: 0;
 		}
+	
+
+		.nav-link {
+			font-weight: 500;
+			color: var(--falinks-blue);
+		}
+
+		.socials {
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			padding-right: 5px;
+		}
+
+		.socials svg {
+			fill: var(--pawmi-orange);
+			height: 25px;
+			width: 25px;
+		}
+
+		@media screen and (min-width: 992px) {
+			.socials svg {
+				height: 20px;
+				width: 20px;
+			}
+		}
+
 	`;
+
+	handleNavigation(id: string) {
+		return () => this.renderRoot.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+	}
 
 	render() {
 		return html`
 			<vg-hcf-layout>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#community" @click="${this.handleNavigation("#community")}">Community</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#anfaenge" @click="${this.handleNavigation("#anfaenge")}">Anfänge</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#regionals" @click="${this.handleNavigation("#regionals")}">Regionals</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#bundesliga" @click="${this.handleNavigation("#bundesliga")}">Bundesliga</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#ep-teiler" @click="${this.handleNavigation("#ep-teiler")}">Podcast</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#staff-team" @click="${this.handleNavigation("#staff-team")}">Staff</a>
+				<div class="socials" slot="navigation">
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://discord.com/invite/Qb8RMupASu"
+					>${Discord}</a>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.youtube.com/@VGC_Gemeinde"
+					>${YouTube}</a>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://twitter.com/vgc_gemeinde"
+					>${Twitter}</a>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.twitch.tv/vgc_gemeinde"
+					>${Twitch}</a>
+				</div>
 				<div class="odd section">
 					<div class="content">
 						<div class="teaser">
@@ -218,7 +277,7 @@ class Home extends LitElement {
 				<div class="odd-to-even"></div>
 				<div class="even section">
 					<div class="content">
-						<div class="text-with-image">
+						<div id="community" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>Community</h1>
 								<p>
@@ -235,7 +294,7 @@ class Home extends LitElement {
 				<div class="even-to-odd"></div>
 				<div class="odd section">
 					<div class="content">
-						<div class="text-with-image">
+						<div id="anfaenge" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>Bescheidene Anfänge</h1>
 								<p>
@@ -251,7 +310,7 @@ class Home extends LitElement {
 				<div class="odd-to-even"></div>
 				<div class="even section">
 					<div class="content">
-						<div class="text-with-image">
+						<div id="regionals" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>Regionals</h1>
 								<p>
@@ -269,7 +328,7 @@ class Home extends LitElement {
 				<div class="even-to-odd"></div>
 				<div class="odd section">
 					<div class="content">
-						<div class="text-with-image">
+						<div id="bundesliga" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>Bundesliga</h1>
 								<p>
@@ -293,7 +352,7 @@ class Home extends LitElement {
 				<div class="odd-to-even"></div>
 				<div class="even section">
 					<div class="content">
-						<div class="text-with-image">
+						<div id="ep-teiler" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>EP-Teiler</h1>
 								<p>
@@ -318,7 +377,7 @@ class Home extends LitElement {
 				<div class="even-to-odd"></div>
 				<div class="odd section">
 					<div class="content">
-						<div class="text-with-image">
+						<div id="staff-team" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>Staff-Team</h1>
 								<p>

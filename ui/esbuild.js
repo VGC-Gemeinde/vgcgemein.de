@@ -8,8 +8,8 @@ const svgLoader = {
 		build.onLoad({ filter: /\.svg$/ }, async (args) => {
 			const text = await fs.promises.readFile(args.path, "utf8");
 			return {
-				contents: `import { html } from "lit";
-        const template = html\`${text}\`;
+				contents: `import { svg } from "lit";
+        const template = svg\`${text}\`;
         export default template;
         `,
 				loader: "js",

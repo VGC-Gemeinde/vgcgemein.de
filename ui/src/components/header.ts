@@ -14,7 +14,7 @@ class Header extends LitElement {
 			flex-direction: row;
 			max-width: var(--max-content-width);
 			margin: auto;
-      justify-content: flex-start;
+      justify-content: space-between;
 			height: 100%;
 		}
 
@@ -25,6 +25,14 @@ class Header extends LitElement {
 		.header-inner img {
 			height: 100%;
 		}
+
+		.header-inner nav {
+			align-self: center;
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			align-items: center;
+		}
 	`;
 
 	render() {
@@ -34,6 +42,9 @@ class Header extends LitElement {
 					<a href="/">
 						<img src="/assets/images/logo-blue.svg" alt="VGC Gemeinde">
 					</a>
+					<nav>
+						<slot></slot>
+					</nav>
 				</div>
 			</header>
     `;

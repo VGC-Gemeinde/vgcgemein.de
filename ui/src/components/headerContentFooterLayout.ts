@@ -16,7 +16,9 @@ class HeaderContentFooterLayout extends LitElement {
 	render() {
 		return html`
       <div class="container">
-        <vg-header></vg-header>
+        <vg-header>
+          <slot name="navigation"></slot>
+        </vg-header>
         <main>
           <slot></slot>
         </main>
