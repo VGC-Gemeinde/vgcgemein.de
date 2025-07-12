@@ -13,17 +13,13 @@ class Header extends LitElement {
 			display: flex;
 			flex-direction: row;
 			max-width: var(--max-content-width);
+			justify-content: space-between;
 			margin: auto;
       justify-content: space-between;
-			height: 100%;
-		}
-
-		.header-inner * {
-			max-height: 100%;
 		}
 
 		.header-inner img {
-			height: 100%;
+			height: 37px;
 		}
 
 		.header-inner nav {
