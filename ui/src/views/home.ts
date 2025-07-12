@@ -234,10 +234,14 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Community</h1>
 								<p>
-									Wir sind mit über 800 Mitgliedern die größte deutschprachige VGC-Community überhaupt. Seit Ende 2022 bringen wir Pokemon-Begeisterte
-									aus der ganzen DACH-Region zusammen für Tuniere, Community-Events, Trainingssession und mehr. Der aktive Discord-Server ist ein
-									Austauschort für alle, egal ob kompetitiv oder casual. Als Community haben wir ein Gemeinschaftsgefühl gefunden das es so vor der Gründung
-									der VGC Gemeinde nicht gab.
+									Wir sind mit knapp 900 Mitgliedern die größte deutschsprachige VGC-Community. Seit Ende 2022 bringen wir Pokemon-Begeisterte
+									aus der ganzen DACH-Region zusammen für Turniere, Community-Events, Trainingssession und mehr. Unser aktiver Discord-Server ist ein
+									Austauschort für alle, egal ob Neuling oder Profi. Unsere größte Motivation ist es, das Gemeinschaftsgefühl der deutschsprachigen
+									Community weiter zu stärken. Werde auch du Teil der <a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://discord.com/invite/Qb8RMupASu"
+									>VGC Gemeinde</a>.
 								</p>
 							</div>
 							<img class="hide-for-mobile" src="/assets/images/community.jpeg">
@@ -251,10 +255,10 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Bescheidene Anfänge</h1>
 								<p>
-									Unser Gründer Tractie rief zu Beginn der Karmesin und Purpur Ära die VGC Gemeinde ins Leben als Weg um andere Spieler und Spielerinnen
-									kennenzulernen, die auch im neuen Spiel aktiv werden möchten und mit diesen zu connecten. Beim ersten Zusammentreffen der frühsten
-									Gemeindemitglieder beim Bochum Regional 2023 entstand das erste Gemeindefoto. Ein Foto was schnell zur Tradition wurde auf allen 
-									nahegelegenen Regionals. Damals war aber noch unklar wie viele Mitglieder das Foto in Zukunft noch befüllen würden...
+									Unser Gründer Tractie rief die VGC Gemeinde zu Beginn der Karmesin- und Purpur-Ära die ins Leben, um eine Plattform für Gleichgesinnte
+									zu schaffen und Neulingen den Einstieg zu erleichtern. Beim Zusammentreffen der frühsten Gemeindemitglieder beim Bochum Regional 2023
+									entstand das erste Gemeindefoto. Das Gruppenfoto wurde direkt Tradition und so folgten viele weitere Regional-Bilder. Damals war aber
+									noch unklar wie viele Mitglieder das Foto in Zukunft noch befüllen würden...
 							</div>
 							<img src="/assets/images/gemeindefoto-2023-bochum-regional.jpg">
 						</div>
@@ -268,10 +272,10 @@ class Home extends LitElement {
 								<h1>Regionals</h1>
 								<p>
 									Mittlerweile werden die offiziellen Regional Championships in Deutschland und Umgebung immer für ein großes Zusammentreffen genutzt.
-									Eine unglaubliche Menge an Gemeindemitgliedern findet sich zusammen und nehmen am Tunier teil. Die Stimmung zwischen den Runden ist
-									einzgiartig. Es wird sich gemeinsam entspannt und sich gegenseitig für die restlichen Runden motiviert. Auch nach dem Tunier finden
-									sich immer Gruppen für Abendaktivitäten. Und zum Abschluss des Tuniertags gibt es immer die Mittlerweile-Tradition das Gemeindefoto.
-									Beim Dortmund-Regional im September 2024 haben sich über 60 Leute für das Foto zusammengefunden. Wahnsinn!
+									Eine unglaubliche Menge an Gemeindemitgliedern findet sich zusammen und nehmen am Turnier teil. Die Stimmung beim Event ist einzigartig,
+									es wird gegenseitig gepusht, angefeuert und über die Runden ausgetauscht.	 Auch nach dem Turnier finden sich immer Gruppen für
+									Abendaktivitäten. Und zum Abschluss des Turniertags gibt es immer die Mittlerweile-Tradition das Gemeindefoto. Schau dir auf dem Foto an,
+									wie viele von uns sich für das Gruppenfoto beim Dortmund Regional im September 2024 zusammengefunden haben – Wahnsinn!
 								</p>
 							</div>
 							<img src="/assets/images/gemeindefoto-2024-dortmund-regional.jpg">
@@ -285,15 +289,15 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Bundesliga</h1>
 								<p>
-									Die VGC Bundesliga ist unser größtes Tunier. Mit 180 Anmeldungen war die vergangne 8. Iteration des Tuniers auch wieder ein großer
-									Erfolg. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches aus bis am Ende ein
-									Sieger feststeht. Das ganze wird auch noch durch unser wöchentliches Match of the Week begleitet in dem jeweils ein Match von unseren
-									besten Castern kommentiert wird. Das ganze ist auf
+									Die VGC Bundesliga ist unser größtes Turnier. Mit 180 Anmeldungen war die vergangene 8. Iteration des Turniers auch wieder ein großer
+									Erfolg. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches aus, bis am Ende ein
+									Sieger feststeht. Das Ganze wird auch noch durch unser wöchentliches Match of the Week begleitet, indem jeweils ein Match von unseren
+									besten Castern kommentiert wird. Alles dazu findest du auf
 									<a
 										target="_blank"
 										rel="noopener noreferrer"
 										href="https://www.youtube.com/@VGC_Gemeinde">
-									unserem YouTube-Kanal</a> zu finden.
+									unserem YouTube-Kanal</a>.
 								</p>
 							</div>
 							<div class="video">
@@ -309,10 +313,10 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>EP-Teiler</h1>
 								<p>
-									Der EP-Teiler ist unser Podcastformat indem wir ganz entspannt mit nennenswerten Mitgliedern der Gemeinde oder der weiteren
-									VGC-Community über die verschiedensten Themen reden. Von großen Erfolgen bei Tunieren über Einblicke in Teile der Community
+									Der EP-Teiler ist unser Podcastformat, indem wir ganz entspannt mit nennenswerten Mitgliedern der Gemeinde oder der weiteren
+									VGC-Community über die verschiedensten Themen reden. Von großen Erfolgen bei Turnieren über Einblicke in Teile der Community
 									die etwas zu wenig Aufmerksamkeit bekommen bis hin zu berüchtigten Blicken hinter die Kulissen werden hier alle Stories
-									erzählt. Aber halt immer bei kuschliger Atmosphere und mit dem ein oder anderem Meme. Falls du mal reinhören möchtest findest
+									erzählt. Aber halt immer bei kuschliger Atmosphäre und mit dem ein oder anderem Meme. Falls du mal reinhören möchtest findest
 									du die Playlist 
 									<a 
 									target="_blank"
@@ -334,11 +338,11 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Staff-Team</h1>
 								<p>
-									Hinter diesen vielzahligen Projekten der VGC Gemeinde steht mittlerweile ein großes Team an Helfern und Helferinnen. Der
-									Gemeinde-Staff besteht mittlerweile aus ca. 40 Mitgliedern die sich in über 15 aufgabenbezogenen Teams organisieren. Die
+									Hinter diesen zahlreichen Projekten der VGC Gemeinde steht mittlerweile ein großes Team an Helfern und Helferinnen. Der
+									Gemeinde-Staff besteht aus ca. 40 Mitgliedern, die sich in über 15 aufgabenbezogenen Teams organisieren. Die
 									Teams sind jedoch nur sehr locker voneinander getrennt und jeder mit genug Motivation darf überall mithelfen. Ein besonderer
 									Dank gilt hier unserem Admin-Team, die ein Überblick über alle Teams haben und Ordnung in das Chaos bringen. Falls du auch mit
-									anpacken möchtest trete dem
+									anpacken möchtest, trete dem
 									<a
 										target="_blank"
 										rel="noopener noreferrer"
