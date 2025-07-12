@@ -13,11 +13,14 @@ class Impressum extends LitElement {
 			align-items: flex-start;
 
       color: var(--falinks-blue);
-      gap: 30px;
 		}
 
-    h1, h2 {
-      margin: 0;
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
     }
     
     td {
@@ -29,7 +32,6 @@ class Impressum extends LitElement {
     .impressum {
       display: flex;
       flex-direction: column;
-      gap: 20px;
     }
 
     .data-identifier {

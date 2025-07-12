@@ -1,9 +1,5 @@
 
 import { css, html, LitElement, PropertyValues } from "lit";
-import Discord from "@fortawesome/fontawesome-free/svgs/brands/discord.svg";
-import YouTube from "@fortawesome/fontawesome-free/svgs/brands/youtube.svg";
-import Twitter from "@fortawesome/fontawesome-free/svgs/brands/square-x-twitter.svg";
-import Twitch from "@fortawesome/fontawesome-free/svgs/brands/twitch.svg";
 
 class Home extends LitElement {
 	static styles = css`
@@ -203,27 +199,6 @@ class Home extends LitElement {
 			font-weight: 500;
 			color: var(--falinks-blue);
 		}
-
-		.socials {
-			display: flex;
-			flex-direction: row;
-			gap: 10px;
-			padding-right: 5px;
-		}
-
-		.socials svg {
-			fill: var(--pawmi-orange);
-			height: 25px;
-			width: 25px;
-		}
-
-		@media screen and (min-width: 992px) {
-			.socials svg {
-				height: 20px;
-				width: 20px;
-			}
-		}
-
 	`;
 
 	handleNavigation(id: string) {
@@ -239,28 +214,6 @@ class Home extends LitElement {
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#bundesliga" @click="${this.handleNavigation("#bundesliga")}">Bundesliga</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#ep-teiler" @click="${this.handleNavigation("#ep-teiler")}">Podcast</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#staff-team" @click="${this.handleNavigation("#staff-team")}">Staff</a>
-				<div class="socials" slot="navigation">
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://discord.com/invite/Qb8RMupASu"
-					>${Discord}</a>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.youtube.com/@VGC_Gemeinde"
-					>${YouTube}</a>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://twitter.com/vgc_gemeinde"
-					>${Twitter}</a>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.twitch.tv/vgc_gemeinde"
-					>${Twitch}</a>
-				</div>
 				<div class="odd section">
 					<div class="content">
 						<div class="teaser">
