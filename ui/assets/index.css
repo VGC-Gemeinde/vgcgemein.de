@@ -42,7 +42,7 @@
 @media screen and (min-width: 992px) {
 	:root {
 		--content-padding: 20px;
-		--teaser-size: 350px;
+		--teaser-size: 300px;
 	}
 }
 
