@@ -274,7 +274,7 @@ class Home extends LitElement {
 									Mittlerweile werden die offiziellen Regional Championships in Deutschland und Umgebung immer für ein großes Zusammentreffen genutzt.
 									Eine unglaubliche Menge an Gemeindemitgliedern findet sich zusammen und nimmt am Turnier teil. Die Stimmung der Events ist einzigartig:
 									Es wird sich gegenseitig gepusht, angefeuert und über die Runden ausgetauscht. Auch zu Abendaktivitäten nach dem Turnier wird sich in
-									Gruppen verabredet. Und zum Abschluss des Turniertags gibt es immer die Mittlerweile-Tradition das Gemeindefoto. Schau dir auf dem Foto
+									Gruppen verabredet. Und zum Abschluss des Turniertags gibt es immer die Mittlerweile-Tradition: Das Gemeindefoto. Schau dir auf dem Foto
 									an, wie viele von uns sich für das Gruppenfoto beim Dortmund Regional im September 2024 zusammengefunden haben – Wahnsinn!
 								</p>
 							</div>
@@ -340,8 +340,8 @@ class Home extends LitElement {
 									Hinter diesen zahlreichen Projekten der VGC Gemeinde steht mittlerweile ein großes Team an Helfern und Helferinnen. Der
 									Gemeinde-Staff besteht aus ca. 40 Mitgliedern, die sich in über 15 aufgabenbezogenen Teams organisieren. Die
 									Teams sind jedoch nur sehr locker voneinander getrennt und jeder mit genug Motivation darf überall mithelfen. Ein besonderer
-									Dank gilt hier unserem Admin-Team, die ein Überblick über alle Teams haben und Ordnung in das Chaos bringen. Falls du auch mit
-									anpacken möchtest, trete dem
+									Dank gilt hier unserem Admin-Team, die ein Überblick über alle Teams haben und Ordnung in das Chaos bringt. Falls du auch mit
+									anpacken möchtest, tritt dem
 									<a
 										target="_blank"
 										rel="noopener noreferrer"
