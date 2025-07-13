@@ -1,50 +1,51 @@
 @font-face {
-  font-family: League Spartan;
-  src: url("/assets/fonts/LeagueSpartan-Light.ttf");
-  font-weight: 300;
+	font-family: League Spartan;
+	src: url("/assets/fonts/LeagueSpartan-Light.ttf");
+	font-weight: 300;
 }
 
 @font-face {
-  font-family: League Spartan;
-  src: url("/assets/fonts/LeagueSpartan-Regular.ttf");
-  font-weight: 400;
+	font-family: League Spartan;
+	src: url("/assets/fonts/LeagueSpartan-Regular.ttf");
+	font-weight: 400;
 }
 
 @font-face {
-  font-family: League Spartan;
-  src: url("/assets/fonts/LeagueSpartan-Medium.ttf");
-  font-weight: 500;
+	font-family: League Spartan;
+	src: url("/assets/fonts/LeagueSpartan-Medium.ttf");
+	font-weight: 500;
 }
 
 @font-face {
-  font-family: League Spartan;
-  src: url("/assets/fonts/LeagueSpartan-Bold.ttf");
-  font-weight: 700;
+	font-family: League Spartan;
+	src: url("/assets/fonts/LeagueSpartan-Bold.ttf");
+	font-weight: 700;
 }
-
 
 :root {
-  font-family: League Spartan;
-  font-size: 16px;
-  --max-content-width: 1280px;
-  --falinks-blue: #021f66;
-  --pawmi-orange: #ff7b00;
-  --wooloo-white: #ffffff;
-  --zekrom-black: #000000;
+	font-family:
+		League Spartan,
+		sans-serif;
+	font-size: 16px;
+	--max-content-width: 1280px;
+	--falinks-blue: #021f66;
+	--pawmi-orange: #ff7b00;
+	--wooloo-white: #ffffff;
+	--zekrom-black: #000000;
 
-  --content-padding: 10px;
-  --teaser-size: 250px;
-  --header-padding: 5px;
-  --footer-padding: 5px;
+	--content-padding: 10px;
+	--teaser-size: 250px;
+	--header-padding: 5px;
+	--footer-padding: 5px;
 }
 
 @media screen and (min-width: 992px) {
-  :root {
-    --content-padding: 20px;
-    --teaser-size: 350px;
-  }
+	:root {
+		--content-padding: 20px;
+		--teaser-size: 350px;
+	}
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }

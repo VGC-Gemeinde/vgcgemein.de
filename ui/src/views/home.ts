@@ -235,7 +235,7 @@ class Home extends LitElement {
 								<h1>Community</h1>
 								<p>
 									Wir sind mit knapp 900 Mitgliedern die größte deutschsprachige VGC-Community. Seit Ende 2022 bringen wir Pokemon-Begeisterte
-									aus der ganzen DACH-Region zusammen für Turniere, Community-Events, Trainingssession und mehr. Unser aktiver Discord-Server ist ein
+									aus der ganzen DACH-Region zusammen für Turniere, Community-Events, Trainingssessions und mehr. Unser aktiver Discord-Server ist ein
 									Austauschort für alle, egal ob Neuling oder Profi. Unsere größte Motivation ist es, das Gemeinschaftsgefühl der deutschsprachigen
 									Community weiter zu stärken. Werde auch du Teil der <a
 										target="_blank"
@@ -255,10 +255,10 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Bescheidene Anfänge</h1>
 								<p>
-									Unser Gründer Tractie rief die VGC Gemeinde zu Beginn der Karmesin- und Purpur-Ära die ins Leben, um eine Plattform für Gleichgesinnte
-									zu schaffen und Neulingen den Einstieg zu erleichtern. Beim Zusammentreffen der frühsten Gemeindemitglieder beim Bochum Regional 2023
+									Unser Gründer Tractie rief die VGC Gemeinde zu Beginn der Karmesin- und Purpur-Ära ins Leben, um eine Plattform für Gleichgesinnte
+									zu schaffen und Neulingen den Einstieg zu erleichtern. Beim Zusammentreffen der frühsten Gemeindemitglieder auf dem Bochum Regional 2023
 									entstand das erste Gemeindefoto. Das Gruppenfoto wurde direkt Tradition und so folgten viele weitere Regional-Bilder. Damals war aber
-									noch unklar wie viele Mitglieder das Foto in Zukunft noch befüllen würden...
+									noch unklar, wie viele Mitglieder das Foto in Zukunft füllen würden...
 							</div>
 							<img src="/assets/images/gemeindefoto-2023-bochum-regional.jpg">
 						</div>
@@ -272,10 +272,10 @@ class Home extends LitElement {
 								<h1>Regionals</h1>
 								<p>
 									Mittlerweile werden die offiziellen Regional Championships in Deutschland und Umgebung immer für ein großes Zusammentreffen genutzt.
-									Eine unglaubliche Menge an Gemeindemitgliedern findet sich zusammen und nehmen am Turnier teil. Die Stimmung beim Event ist einzigartig,
-									es wird gegenseitig gepusht, angefeuert und über die Runden ausgetauscht.	 Auch nach dem Turnier finden sich immer Gruppen für
-									Abendaktivitäten. Und zum Abschluss des Turniertags gibt es immer die Mittlerweile-Tradition das Gemeindefoto. Schau dir auf dem Foto an,
-									wie viele von uns sich für das Gruppenfoto beim Dortmund Regional im September 2024 zusammengefunden haben – Wahnsinn!
+									Eine unglaubliche Menge an Gemeindemitgliedern findet sich zusammen und nimmt am Turnier teil. Die Stimmung der Events ist einzigartig:
+									Es wird sich gegenseitig gepusht, angefeuert und über die Runden ausgetauscht. Auch zu Abendaktivitäten nach dem Turnier wird sich in
+									Gruppen verabredet. Und zum Abschluss des Turniertags gibt es immer die Mittlerweile-Tradition das Gemeindefoto. Schau dir auf dem Foto
+									an, wie viele von uns sich für das Gruppenfoto beim Dortmund Regional im September 2024 zusammengefunden haben – Wahnsinn!
 								</p>
 							</div>
 							<img src="/assets/images/gemeindefoto-2024-dortmund-regional.jpg">
@@ -289,7 +289,7 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Bundesliga</h1>
 								<p>
-									Die VGC Bundesliga ist unser größtes Turnier. Mit 180 Anmeldungen war die vergangene 8. Iteration des Turniers auch wieder ein großer
+									Die VGC Bundesliga ist unser größtes Turnier. Mit 180 Anmeldungen war die vergangene 8. Saison des Turniers auch wieder ein großer
 									Erfolg. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches aus, bis am Ende ein
 									Sieger feststeht. Das Ganze wird auch noch durch unser wöchentliches Match of the Week begleitet, indem jeweils ein Match von unseren
 									besten Castern kommentiert wird. Alles dazu findest du auf
@@ -313,11 +313,10 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>EP-Teiler</h1>
 								<p>
-									Der EP-Teiler ist unser Podcastformat, indem wir ganz entspannt mit nennenswerten Mitgliedern der Gemeinde oder der weiteren
-									VGC-Community über die verschiedensten Themen reden. Von großen Erfolgen bei Turnieren über Einblicke in Teile der Community
-									die etwas zu wenig Aufmerksamkeit bekommen bis hin zu berüchtigten Blicken hinter die Kulissen werden hier alle Stories
-									erzählt. Aber halt immer bei kuschliger Atmosphäre und mit dem ein oder anderem Meme. Falls du mal reinhören möchtest findest
-									du die Playlist 
+									Der EP-Teiler ist unser Podcastformat, in dem wir ganz entspannt mit nennenswerten Mitgliedern der Gemeinde oder der weiteren
+									VGC-Community über die verschiedensten Themen sprechen. Von großen Erfolgen bei Turnieren über Einblicke in weniger bekannte
+									Teile der Community bis hin zum berüchtigten Blick hinter die Kulissen werden hier alle Storys erzählt. Und das immer in
+									gemütlicher Atmosphäre und nicht ohne das ein oder andere Meme. Die Playlist findest du
 									<a 
 									target="_blank"
 									rel="noopener noreferrer"

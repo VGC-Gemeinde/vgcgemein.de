@@ -1,6 +1,6 @@
 declare module "*.svg" {
-	import type { HTMLTemplateResult } from "lit";
+	import type { SVGTemplateResult } from "lit";
 
-	const content: HTMLTemplateResult;
+	const content: SVGTemplateResult;
 	export default content;
 }
