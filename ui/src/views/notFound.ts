@@ -1,4 +1,3 @@
-
 import { html, LitElement } from "lit";
 
 class NotFound extends LitElement {

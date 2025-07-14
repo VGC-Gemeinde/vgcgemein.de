@@ -1,5 +1,4 @@
-
-import { css, html, LitElement, PropertyValues } from "lit";
+import { css, html, LitElement } from "lit";
 
 class Home extends LitElement {
 	static styles = css`
@@ -202,7 +201,8 @@ class Home extends LitElement {
 	`;
 
 	handleNavigation(id: string) {
-		return () => this.renderRoot.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+		return () =>
+			this.renderRoot.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 	}
 
 	render() {
