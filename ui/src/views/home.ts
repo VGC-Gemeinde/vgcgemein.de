@@ -192,28 +192,60 @@ class Home extends LitElement {
 		p {
 			margin: 0;
 		}
-	
 
 		.nav-link {
 			font-weight: 500;
 			color: var(--falinks-blue);
+			text-decoration: none;
+			transition: text-decoration 0.5s;
+		}
+
+		.nav-link:hover {
+			text-decoration: underline;
 		}
 	`;
 
-	handleNavigation(id: string) {
-		return () =>
-			this.renderRoot.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+	scrollToHash(renderRoot: HTMLElement | DocumentFragment) {
+		return (_e: HashChangeEvent | undefined, smooth = true) => {
+			const hash = window.location.hash;
+			console.log(hash);
+			const element = renderRoot.querySelector(hash);
+			console.log(element)
+			
+			if(!element) {
+				return 
+			}
+			element.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
+		}
+	}
+
+	hashchangeCallback(_e: HashChangeEvent | undefined, _s = true) {}
+
+	firstUpdated() {
+			history.scrollRestoration = "manual";
+			const scrollTo = this.scrollToHash(this.renderRoot);
+			this.updateComplete.then(() => scrollTo(undefined, false));
+			addEventListener("hashchange", scrollTo);
+			this.hashchangeCallback = scrollTo;
+	}
+
+	
+
+	disconnectedCallback() {
+			super.disconnectedCallback();
+			removeEventListener("hashchange", this.hashchangeCallback);
 	}
 
 	render() {
 		return html`
 			<vg-hcf-layout>
-				<a class="nav-link hide-for-mobile" slot="navigation" href="#community" @click="${this.handleNavigation("#community")}">Community</a>
-				<a class="nav-link hide-for-mobile" slot="navigation" href="#anfaenge" @click="${this.handleNavigation("#anfaenge")}">Anfänge</a>
-				<a class="nav-link hide-for-mobile" slot="navigation" href="#regionals" @click="${this.handleNavigation("#regionals")}">Regionals</a>
-				<a class="nav-link hide-for-mobile" slot="navigation" href="#bundesliga" @click="${this.handleNavigation("#bundesliga")}">Bundesliga</a>
-				<a class="nav-link hide-for-mobile" slot="navigation" href="#ep-teiler" @click="${this.handleNavigation("#ep-teiler")}">Podcast</a>
-				<a class="nav-link hide-for-mobile" slot="navigation" href="#staff-team" @click="${this.handleNavigation("#staff-team")}">Staff</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#community">Community</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#anfaenge">Anfänge</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#regionals">Regionals</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#bundesliga">Bundesliga</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#ep-teiler">Podcast</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#staff-team">Staff</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="https://shop.vgcgemein.de">Merch</a>
 				<div class="odd section">
 					<div class="content">
 						<div class="teaser">
@@ -234,7 +266,7 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Community</h1>
 								<p>
-									Wir sind mit knapp 900 Mitgliedern die größte deutschsprachige VGC-Community. Seit Ende 2022 bringen wir Pokemon-Begeisterte
+									Wir sind mit über 900 Mitgliedern die größte deutschsprachige VGC-Community. Seit Ende 2022 bringen wir Pokemon-Begeisterte
 									aus der ganzen DACH-Region zusammen für Turniere, Community-Events, Trainingssessions und mehr. Unser aktiver Discord-Server ist ein
 									Austauschort für alle, egal ob Neuling oder Profi. Unsere größte Motivation ist es, das Gemeinschaftsgefühl der deutschsprachigen
 									Community weiter zu stärken. Werde auch du Teil der <a
