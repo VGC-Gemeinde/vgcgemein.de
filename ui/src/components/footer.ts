@@ -86,7 +86,7 @@ class Footer extends LitElement {
 						<a class="footer-link" href="/datenschutz">
 							Datenschutzerklärung
 						</a>
-						<a class="footer-link" href="https://www.paypal.com/paypalme/vgcgemeinde">
+						<a class="footer-link" href="https://paypal.me/VGCGemeindeTR">
 							Spenden	
 						</a>
 					</div>
