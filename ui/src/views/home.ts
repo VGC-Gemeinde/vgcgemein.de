@@ -1,4 +1,7 @@
+import { Task } from "@lit/task";
 import { css, html, LitElement } from "lit";
+import { queryMemberCount } from "../utils/queryMemberCount";
+import { renderTask } from "../utils/renderTask";
 
 class Home extends LitElement {
 	static styles = css`
@@ -221,6 +224,11 @@ class Home extends LitElement {
 
 	hashchangeCallback(_e: HashChangeEvent | undefined, _s = true) {}
 
+	#queryMemberCountTask = new Task(this, {
+		task: queryMemberCount,
+		args: () => [],
+	});
+
 	firstUpdated() {
 			history.scrollRestoration = "manual";
 			const scrollTo = this.scrollToHash(this.renderRoot);
@@ -237,6 +245,12 @@ class Home extends LitElement {
 	}
 
 	render() {
+		const memberCount = renderTask(this.#queryMemberCountTask);
+		const memberMilestone =
+			memberCount.type === "completed"
+				? Math.floor(memberCount.value / 100) * 100
+				: 1000;
+
 		return html`
 			<vg-hcf-layout>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#community">Community</a>
@@ -266,7 +280,7 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Community</h1>
 								<p>
-									Wir sind mit über 900 Mitgliedern die größte deutschsprachige VGC-Community. Seit Ende 2022 bringen wir Pokemon-Begeisterte
+									Wir sind mit über ${memberMilestone} Mitgliedern die größte deutschsprachige VGC-Community. Seit Ende 2022 bringen wir Pokemon-Begeisterte
 									aus der ganzen DACH-Region zusammen für Turniere, Community-Events, Trainingssessions und mehr. Unser aktiver Discord-Server ist ein
 									Austauschort für alle, egal ob Neuling oder Profi. Unsere größte Motivation ist es, das Gemeinschaftsgefühl der deutschsprachigen
 									Community weiter zu stärken. Werde auch du Teil der <a
