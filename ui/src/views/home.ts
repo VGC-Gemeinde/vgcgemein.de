@@ -367,12 +367,12 @@ class Home extends LitElement {
 									<a 
 									target="_blank"
 									rel="noopener noreferrer"
-									href="https://www.youtube.com/watch?v=qqQBQdm2-9o&list=PLkvKoUnKhLVk3bS6k2rMUP2s1xX58ZhSz">
+									href="https://www.youtube.com/watch?v=EHxulylk1b8&list=PLkvKoUnKhLVk3bS6k2rMUP2s1xX58ZhSz">
 									hier</a>.
 								</p>
 							</div>
 							<div class="video">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/qqQBQdm2-9o?si=RXVF7eCuFHOmcK_k" allowfullscreen frameborder="0"></iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/EHxulylk1b8" allowfullscreen frameborder="0"></iframe>
 							</div>
 						</div>
 					</div>
