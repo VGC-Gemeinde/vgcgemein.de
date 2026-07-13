@@ -110,6 +110,7 @@ class Home extends LitElement {
 
 		.text-with-image img {
 			width: 55%;
+			flex-shrink: 0;
 			filter: drop-shadow(0px 0px 5px var(--zekrom-black));
 		}
 
