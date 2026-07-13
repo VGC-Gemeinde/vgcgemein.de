@@ -257,6 +257,7 @@ class Home extends LitElement {
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#community">Community</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#anfaenge">Anfänge</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#regionals">Regionals</a>
+				<a class="nav-link hide-for-mobile" slot="navigation" href="#gemeinde-meisterschaft">Meisterschaft</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#bundesliga">Bundesliga</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#ep-teiler">Podcast</a>
 				<a class="nav-link hide-for-mobile" slot="navigation" href="#staff-team">Staff</a>
@@ -332,6 +333,29 @@ class Home extends LitElement {
 				<div class="even-to-odd"></div>
 				<div class="odd section">
 					<div class="content">
+						<div id="gemeinde-meisterschaft" class="text-with-image">
+							<div class="text-with-heading">
+								<h1>Gemeinde-Meisterschaft</h1>
+								<p>
+									Am 25. und 26. Juli findet in Frankfurt die Gemeinde-Meisterschaft statt – unser erstes eigenes Offline-Event! Mit über
+									100 Teilnehmern ist das Turnier komplett ausverkauft und die Vorfreude riesig. Ein ganzes Wochenende lang messen sich
+									die Mitglieder der Gemeinde, bis am Ende feststeht, wer den Titel mit nach Hause nimmt. Du möchtest live mitfiebern?
+									Dann tritt unserem
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://discord.com/invite/Qb8RMupASu"
+									>Discord</a>
+									bei und verpasse nichts rund um das Turnier!
+								</p>
+							</div>
+							<img src="/assets/images/gemeinde-meisterschaft-logo.png" alt="Gemeinde-Meisterschaft">
+						</div>
+					</div>
+				</div>
+				<div class="odd-to-even"></div>
+				<div class="even section">
+					<div class="content">
 						<div id="bundesliga" class="text-with-image">
 							<div class="text-with-heading">
 								<h1>Bundesliga</h1>
@@ -353,8 +377,8 @@ class Home extends LitElement {
 						</div>
 					</div>
 				</div>
-				<div class="odd-to-even"></div>
-				<div class="even section">
+				<div class="even-to-odd"></div>
+				<div class="odd section">
 					<div class="content">
 						<div id="ep-teiler" class="text-with-image">
 							<div class="text-with-heading">
@@ -377,8 +401,8 @@ class Home extends LitElement {
 						</div>
 					</div>
 				</div>
-				<div class="even-to-odd"></div>
-				<div class="odd section">
+				<div class="odd-to-even"></div>
+				<div class="even section">
 					<div class="content">
 						<div id="staff-team" class="text-with-image">
 							<div class="text-with-heading">
