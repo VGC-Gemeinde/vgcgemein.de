@@ -337,19 +337,20 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Gemeinde-Meisterschaft</h1>
 								<p>
-									Am 25. und 26. Juli findet in Frankfurt die Gemeinde-Meisterschaft statt – unser erstes eigenes Offline-Event! Mit über
-									100 Teilnehmern ist das Turnier komplett ausverkauft und die Vorfreude riesig. Ein ganzes Wochenende lang messen sich
-									die Mitglieder der Gemeinde, bis am Ende feststeht, wer den Titel mit nach Hause nimmt. Du möchtest live mitfiebern?
-									Dann tritt unserem
+									Am 25. und 26. Juli fand in Frankfurt die erste Gemeinde-Meisterschaft statt. Unser erstes eigenes Offline-Event war
+									mit über 100 Teilnehmern komplett ausverkauft und ein voller Erfolg. Ein ganzes Wochenende lang haben sich die
+									Mitglieder der Gemeinde gemessen, bis am Ende Leon Müller den Titel mit nach Hause nehmen durfte. Alle Teams
+									und ausführliche Stats zum Turnier findest du
 									<a
 										target="_blank"
 										rel="noopener noreferrer"
-										href="https://discord.com/invite/Qb8RMupASu"
-									>Discord</a>
-									bei und verpasse nichts rund um das Turnier!
+										href="https://turniere.vgcgemein.de/tournament/gemeinde-meisterschaft-2026"
+									>hier</a>.
 								</p>
 							</div>
-							<img src="/assets/images/gemeinde-meisterschaft-logo.png" alt="Gemeinde-Meisterschaft">
+							<div class="video">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/DgbYSGHt0rw" allowfullscreen frameborder="0"></iframe>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -360,19 +361,20 @@ class Home extends LitElement {
 							<div class="text-with-heading">
 								<h1>Bundesliga</h1>
 								<p>
-									Die VGC Bundesliga ist unser größtes Turnier. Mit 180 Anmeldungen war die vergangene 8. Saison des Turniers auch wieder ein großer
-									Erfolg. In einem klassischen Ligasystem tragen die Teilnehmer in 7 Divisionen über mehrere Wochen ihre Matches aus, bis am Ende ein
-									Sieger feststeht. Das Ganze wird auch noch durch unser wöchentliches Match of the Week begleitet, indem jeweils ein Match von unseren
-									besten Castern kommentiert wird. Alles dazu findest du auf
+									Die VGC Bundesliga ist unser größtes Turnier. In einem klassischen Ligasystem tragen die Teilnehmer in mehreren Divisionen über
+									mehrere Wochen ihre Matches aus, bis am Ende ein Sieger feststeht. Das Ganze wird auch noch durch unser wöchentliches Match of the
+									Week begleitet, indem jeweils ein Match von unseren besten Castern kommentiert wird. Schau dir im Video die Highlights der letzten
+									Saison an! Und das Beste: Die 9. Saison der Bundesliga steht in den Startlöchern und die Anmeldung ist ab sofort geöffnet. Sichere dir
 									<a
 										target="_blank"
 										rel="noopener noreferrer"
-										href="https://www.youtube.com/@VGC_Gemeinde">
-									unserem YouTube-Kanal</a>.
+										href="https://buli.vgcgemein.de/anmeldung">
+									hier</a>
+									deinen Platz!
 								</p>
 							</div>
 							<div class="video">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/91oUiRnGoZk?si=xq3-RRh0W2hwlLtf" allowfullscreen frameborder="0"></iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/EDjE_K2cXOk" allowfullscreen frameborder="0"></iframe>
 							</div>
 						</div>
 					</div>
@@ -396,7 +398,7 @@ class Home extends LitElement {
 								</p>
 							</div>
 							<div class="video">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/EHxulylk1b8" allowfullscreen frameborder="0"></iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/PWqtBfC4DvM" allowfullscreen frameborder="0"></iframe>
 							</div>
 						</div>
 					</div>
